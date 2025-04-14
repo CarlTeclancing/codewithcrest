@@ -1,0 +1,70 @@
+.video-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 600px;
+    font-family: sans-serif;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .video-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .thumbnail.blue {
+    background: linear-gradient(to right, #007cf0, #00dfd8);
+  }
+  
+  .thumbnail.purple {
+    background: linear-gradient(to right, #833ab4, #fd1d1d);
+  }
+  
+  .thumbnail.green {
+    background: linear-gradient(to right, #11998e, #38ef7d);
+  }
+  
+  .play-button {
+    font-size: 20px;
+    color: white;
+  }
+  
+  .video-details {
+    flex: 1;
+    margin-left: 15px;
+  }
+  
+  .video-details strong {
+    display: block;
+    font-size: 16px;
+  }
+  
+  .video-details p {
+    font-size: 14px;
+    color: gray;
+    margin: 5px 0 0 0;
+  }
+  
+  .like-button {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  

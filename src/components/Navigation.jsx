@@ -5,7 +5,7 @@ import Button from './Button'
 function Navigation() {
   return (
     <div className='nav'>
-        <h1>CODEwithCREST</h1>
+        <h1>CwC</h1>
         <div className="nav-el">
             <a href='home'>Home</a>
             <a href='home'>About</a>
