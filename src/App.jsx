@@ -3,6 +3,7 @@ import Button from './components/Button'
 import Navigation from './components/Navigation'
 import VideoList from './components/VideoList'
 import FloatingElements from './components/FloatingElements'
+import Fetching from './components/api/Fetching'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <h1 className="heading">Learn By Watching Tutorials</h1>
 
       <VideoList />
+      <Fetching />
 
     </>
   )

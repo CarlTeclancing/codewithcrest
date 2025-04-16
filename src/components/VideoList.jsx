@@ -28,7 +28,7 @@ const videos = [
 const VideoList = () => {
   return (
     <div className="video-container">
-      <h2>3 Videos</h2>
+      <h2>Advance React Tutorials</h2>
       {videos.map((video) => (
         <div className="video-item" key={video.id}>
           <div className={`thumbnail ${video.thumbnailColor}`}>
