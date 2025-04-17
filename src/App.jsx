@@ -4,6 +4,7 @@ import Navigation from './components/Navigation'
 import VideoList from './components/VideoList'
 import FloatingElements from './components/FloatingElements'
 import Fetching from './components/api/Fetching'
+import FetchData from './crud/FetchData'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
 
       <VideoList />
       <Fetching />
+      <FetchData />
 
     </>
   )
