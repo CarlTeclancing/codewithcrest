@@ -5,9 +5,14 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Hello from './pages/Hello.jsx'
 
+import Dashboard from './pages/Dashboard/Dashboard.jsx'
+import Ranking from './pages/ranking/Ranking.jsx'  
+
 const router = createBrowserRouter([
   {path:'/', element:<App />},
-  {path:'/hello', element:<Hello />}
+  {path:'/hello', element:<Hello />},
+  {path:'/dashboard', element:<Dashboard />},
+  {path:'/ranking', element:<Ranking />}
 ]);
 
 createRoot(document.getElementById('root')).render(
