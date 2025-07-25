@@ -1,0 +1,120 @@
+.total-points{
+    color: #2563EB;
+    font-size: 19px;
+    font-weight: bolder;
+}
+.points-earned{
+    color: #16A34A;
+    font-size: 19px;
+    font-weight: bolder;
+}
+.points-lost{
+    color: #DC2626;
+    font-size: 19px;
+    font-weight: bolder;
+}
+.progress{
+    padding: 20px;
+    width: 90%;
+    display: flex;
+    margin-top: 25px;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+progress{
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  appearance: none;
+}
+progress::-webkit-progress-bar {
+    height: 8px;
+    border-radius: 10px;  
+    background-color: #eee;
+}
+progress::-webkit-progress-value {
+  background-color: #2563EB;
+  border-radius: 10px; 
+  height: 8px;
+}
+.bottom-line{
+    display: flex;
+    justify-content: space-between;
+}
+.blue{
+    color: #2563EB;
+}
+.top-coders{
+    padding: 20px !important;
+    display: flex;
+    width: 90%;
+    display: flex;
+    margin-top: 25px;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+.first-line{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.box .p{
+    color: #959595;
+}
+.first-line a{
+    color: white;
+    padding: 8px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #2563EB;
+}
+.leader-board{
+    display: flex;
+    margin: 10px 0;
+}
+.user-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5e2b3;
+  border:  1px solid #FFBC10;
+  border-radius: 12px;
+  padding: 10px 16px;
+  margin-right: 20px;
+  width: 150px;
+}
+.profile-pic {
+  width: 70px;
+  height: 50px;
+  border-radius: 50%;
+  margin:0;
+}
+.user-info {
+  width: 97%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-name{
+    margin: 0%;
+}
+.user-points{
+    margin: 0%;
+}
+.taple-point{
+    color: #16A34A;
+}
+.filter{
+    display: flex;
+}
+select{
+    padding: 5px 10px;
+    margin-left: 10px;
+    outline: none;
+}
