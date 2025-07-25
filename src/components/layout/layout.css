@@ -12,6 +12,10 @@
   display: flex;
   justify-content: space-between;
   height: auto;
+  padding-bottom: 30px;
+  margin-top: 40px;
+  margin-left: 240px;
+  font-size: 14px;
 
 }
 .col{
@@ -54,7 +58,6 @@
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 .logo{
  margin:0px;
  color: #FFBC10;
@@ -86,11 +89,16 @@
   padding: 0 15px;
 }
 .profile{
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .profile img{
-    width: 50px;
-    border-radius: 50%;
-    margin-left: 10px;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+img{
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 10px;
 }

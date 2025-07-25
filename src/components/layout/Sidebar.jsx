@@ -11,7 +11,8 @@ function Sidebar() {
                   <span className='nav-el'>Dashboard</span>
                   
                </Link>
-               <Link className={`section ${location.pathname === "/submit" ? "active" : ""}`} to="/submit">
+
+               <Link className={`section ${location.pathname === "/submitlab" ? "active" : ""}`} to="/submitlab">
                   <i class="bi bi-file-earmark-plus-fill"></i>
                   <span className='nav-el'>Submit Lab</span>
                </Link>
@@ -27,7 +28,8 @@ function Sidebar() {
                   <i class="bi bi-bug-fill"></i>
                   <span className='nav-el'>Bug Tracking</span>
                </Link>
-               <Link className={`section ${location.pathname === "/results" ? "active" : ""}`} to="/results">
+
+               <Link className={`section ${location.pathname === "/community" ? "active" : ""}`} to="/community">
                   <i class="bi bi-people-fill"></i>
                   <span className='nav-el'>Community</span>
                </Link>

@@ -7,11 +7,15 @@ import Hello from './pages/Hello.jsx'
 
 import Dashboard from './pages/Dashboard/Dashboard.jsx'
 import Ranking from './pages/ranking/Ranking.jsx'  
+import SubmitLab from './pages/submitLab/SubmitLab.jsx'
+import Community from './pages/community/Community.jsx'
 
 const router = createBrowserRouter([
   {path:'/', element:<App />},
   {path:'/hello', element:<Hello />},
   {path:'/dashboard', element:<Dashboard />},
+  {path:'/submitlab', element:<SubmitLab />},
+  {path:'/community', element:<Community />},
   {path:'/ranking', element:<Ranking />}
 ]);
 
