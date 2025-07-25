@@ -6,12 +6,14 @@ import './layout.css'
 function Layout({children}) {
   return (
     <div className='container'>
-            <Header />
-        <div className="row">
-            <Sidebar />
-        </div>
+        
+        <Header />
+
         <div className="content">
-        {children}
+          <Sidebar />
+          <div className="col">
+            {children}
+          </div>
         </div>
      </div>
   )

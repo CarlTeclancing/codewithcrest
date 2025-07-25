@@ -4,6 +4,7 @@ import Img1 from '../../assets/img1.jpg'
 function Header() {
   return (
     <div className='head'>
+      <h2 className="logo"><span>CODE</span>with<span>CREST</span></h2>
         <div>
             <input type="text" className='search' placeholder='search...'/>
         </div>
