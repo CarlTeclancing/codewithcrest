@@ -63,7 +63,7 @@ table{
   color: white;
 }
 .lab{
-  width: 98%;
+  width: 95%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -88,4 +88,32 @@ table{
   padding: 6px 12px 6px 12px;
   border-radius: 6px;
   margin: 6px;
+}
+.col-flex-row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.col-flex-row div:first-child{
+  background-color: #F0F9FF;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #93B4FD;
+  border-left: 4px solid var(--primary-color);
+}
+.col-flex-row div:nth-child(2){
+  background-color: #FEF2F2;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #93B4FD;
+  border-left: 4px solid var(--primary-error-color);
+  margin-left: 12px;
+}
+.col-flex-row div:nth-child(3){
+  background-color: #F0F9FF;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #93B4FD;
+  border-left: 4px solid var(--completed);
+  margin-left: 12px;
 }

@@ -21,6 +21,7 @@
   width: calc(100% - 300px);
   padding: 24px;
   margin-left: 324px;
+  overflow-x: hidden;
 }
 .col{
   width: 100%;
