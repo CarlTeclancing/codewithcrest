@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content:center;
   width:250px ;
-  max-width:250px ;
+  max-width:200px ;
   padding: 15px;
   background-color: white;
   margin-right: 20px;
@@ -14,12 +14,12 @@
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 .yellow{
-    color: #FFBC10;
+  color: #FFBC10;
 }
 .graph{
-    margin-top: 25px;
-    text-align: center;
-    color: #FFBC10;
+  margin-top: 25px;
+  text-align: center;
+  color: #FFBC10;
 }
 .updates{
   margin-top: 25px;  
