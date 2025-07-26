@@ -6,7 +6,7 @@
     padding: 12px 20px;
     border-radius: 5px;
     margin-bottom: 20px;
-    border: 2px solid #bedefd;
+    border: 2px solid #959595;
 }
 .left-side{
     width: 60%;
@@ -39,7 +39,7 @@ input, textarea{
     outline: none;
     padding: 5px 10px;
     border-radius: 5px;
-    border: 1px solid #bedefd;
+    border: 1px solid #959595;
 }
 .bottom{
     display: flex;
@@ -73,4 +73,23 @@ input, textarea{
 }
 .contributor-point{
     color: #959595;
+}
+.suggestion{
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #f3f2f2;
+}
+.level-name{
+    color: #16A34A;
+}
+.suggestion p, .level-point{
+    color: #959595;
+}
+.post-profile{
+    display: flex;
+}
+.post-profile-info{
+    display: flex;
+    flex-direction: column;
 }

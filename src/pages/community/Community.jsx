@@ -3,7 +3,12 @@ import './community.css'
 import { Link } from 'react-router-dom'
 import Img1 from '../../assets/img1.jpg'
 import Layout from '../../components/layout/Layout.jsx'
+import CommunityPost from '../../components/CommunityPost.jsx'
 
+const posts = [
+  { name: 'De Duke Eric', pic: '../../assets/img1.jpg', time:'2 hours ago', title:'Weather App with API Integration', description:'Built a responsive weather app using vanilla JavaScript and OpenWeather API. Features include location detection and 5-day forecast.', hashtags:'#JavaScript #API #WebDev' },
+  
+];
 function Community() {
   return (
     <Layout>
@@ -28,6 +33,19 @@ function Community() {
                        </div>
                     </form>
                 </div>
+
+                {posts.map((post, index) => (
+                <CommunityPost
+                    key={index}
+                    name={post.name}
+                    Pic={post.pic}
+                    time={post.time}
+                    title={post.title}
+                    description={post.description}
+                    code={post.code}
+                    hashtags={post.hashtags}                  
+                />
+                ))}
             </div>
 
             <div className="right-side">
@@ -80,7 +98,22 @@ function Community() {
 
                 <div className="form-post">
                     <h3>Suggested Projects</h3>   
-                    
+                    <div className="suggestion">
+                        <h4>Todo App with Local Storage</h4>
+                        <p>Built a task manager using vanilla Js</p>
+                        <div className="level">
+                            <span className="level-name">Beginner . </span>
+                            <span className="level-point">50 points</span><br />
+                        </div>
+                    </div>
+                    <div className="suggestion">
+                        <h4>Todo App with Local Storage</h4>
+                        <p>Built a task manager using vanilla Js</p>
+                        <div className="level">
+                            <span className="level-name">Beginner . </span>
+                            <span className="level-point">50 points</span><br />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
