@@ -1,10 +1,30 @@
+:root {
+  /* CSS variables */
+   --primary-color: #5B0C4E;
+   --primary-color-hover: #5b0c4edc;
+   --bg-color: #FFFAFE;
+   --bg-white: #ffffff;
+   --text-color: #262626;
+   --border-color: #93B4FD;
+   --bg-tab: #DECADB;
+   
+   --pending: #EA5254;
+   --completed: #3CDA7D;
+   --in-progress: #F9BD3B;
+ 
+   --primary-white-color: white;
+   --primary-black-color: black;
+   --primary-error-color: red;
+ }
+
 body{
   margin: 0%;
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
-  font-family: "Special Gothic Expanded One", sans-serif;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }

@@ -7,12 +7,14 @@ import Hello from './pages/Hello.jsx'
 
 import Dashboard from './pages/Dashboard/Dashboard.jsx'
 import Ranking from './pages/ranking/Ranking.jsx'  
+import Labs from './pages/labs/Labs.jsx'
 
 const router = createBrowserRouter([
   {path:'/', element:<App />},
   {path:'/hello', element:<Hello />},
   {path:'/dashboard', element:<Dashboard />},
-  {path:'/ranking', element:<Ranking />}
+  {path:'/ranking', element:<Ranking />},
+  {path:'/submit', element:<Labs />},
 ]);
 
 createRoot(document.getElementById('root')).render(

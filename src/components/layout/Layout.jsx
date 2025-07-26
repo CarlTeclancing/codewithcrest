@@ -11,12 +11,13 @@ function Layout({children}) {
 
         <div className="content">
           <Sidebar />
-          <div className="col">
+          <div className="container-2">
             {children}
           </div>
         </div>
+
      </div>
   )
 }
 
-export default Layout
+export default Layout;
