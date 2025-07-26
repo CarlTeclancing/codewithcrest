@@ -9,7 +9,7 @@ function Header() {
             <input type="text" className='search' placeholder='search...'/>
         </div>
         <div className="profile">
-            <p className='name'>De Duke Kenzo</p>
+            <p className='name'>De Duke Kenzo<br/><span className='points'>125 points</span></p>
             <img src={Img1} alt="" />
         </div>
     </div>

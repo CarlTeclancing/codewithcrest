@@ -23,7 +23,9 @@
 }
 .updates{
   margin-top: 25px;  
+  width: 100%;
 }
+
 th{
   background-color: #94bbe6;
   color: #fff;
@@ -35,11 +37,55 @@ td,th{
 }
 table{
   width: 100%;
-  max-width: 900px;
   font-size: 14px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.123);
   background-color: #fff;
   overflow: hidden;
   border-collapse: collapse;
-  text-align: center;
+  text-align: left;
+}
+.points{
+  color: #00ac4d;
+  font-weight: bolder;
+  font-size: 20px;
+}
+.btn-primary{
+  background-color:var(--primary-color) ;
+  color: white;
+  padding: 16px 32px 16px 32px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-primary:hover{
+  background-color: var(--primary-color-hover);
+  color: white;
+}
+.lab{
+  width: 98%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--primary-color-hover);
+  border-radius: 24px;
+  padding: 24px;
+  margin-top: 24px;
+}
+.col-1{
+  width: 98%;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.right{
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+}
+.tags span{
+  background-color: #00ac4d;
+  padding: 6px 12px 6px 12px;
+  border-radius: 6px;
+  margin: 6px;
 }
