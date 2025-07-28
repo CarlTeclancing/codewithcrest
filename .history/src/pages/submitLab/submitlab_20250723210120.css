@@ -1,0 +1,29 @@
+.lab-info{
+    width: 90%;
+    display: flex;
+    padding: 20px;
+    border-radius: 5px;
+    flex-direction: column;
+    border: 1px solid #FFBC10;
+}
+.headline{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bottom-line{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.hashtags{
+
+    color: #2563EB;
+}
+.deadline{
+    color: #2563EB;
+    margin-right: 15px;
+}
+.task{
+    color: #959595
+}

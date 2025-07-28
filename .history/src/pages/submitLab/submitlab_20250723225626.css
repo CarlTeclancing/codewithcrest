@@ -1,0 +1,87 @@
+.lab-info{
+    width: 90%;
+    display: flex;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    flex-direction: column;
+    border: 1px solid #FFBC10;
+}
+.headline{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.bottom-line{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.hashtags{
+    padding: 3px 6px;
+    color: #006EFF;
+    border-radius: 6px;
+    background-color: #E3F2FD;
+}
+.deadline{
+    color: #006EFF;
+    margin-right: 25px;
+}
+.task{
+    color: #959595;
+}
+button{
+    color: black;
+    padding: 5px 8px;
+    margin-right: 20px;
+}
+button:hover, .button.active{
+  cursor: pointer;
+  border-radius: 2px;
+  color: white;
+  border: 1px solid #2563EB;
+  background-color: #2563EB;
+}
+.upload{
+    padding: 20px;
+    width: 60%;
+    height: 160px;
+    place-self: center;
+    display: flex;
+    margin: 25px 0;
+    border-radius: 5px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed black;
+}
+.upload input{
+    padding: 5px 8px;
+    place-self: center;
+}
+.upload span{
+ color: #959595;
+ font-size: 10px;
+}
+
+th{
+    color: #959595;
+    font-weight: lighter;
+    background-color: #E3F2FD;
+}
+td{
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+.url{
+    color: #006EFF;
+}
+.bar a{
+    color: black;
+    font-weight: 12px;
+    margin-right: 25px;
+    font-weight: lighter;
+    text-decoration: none;
+}
