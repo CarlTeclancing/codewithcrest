@@ -24,7 +24,7 @@ function Sidebar() {
                   <i class="bi bi-trophy-fill"></i>
                   <span className='nav-element'>Ranking</span>
                </Link>
-               <Link className={`section ${location.pathname === "/courses" ? "active" : ""}`} to="/courses">
+               <Link className={`section ${location.pathname === "/bugtracking" ? "active" : ""}`} to="/bugtracking">
                   <i class="bi bi-bug-fill"></i>
                   <span className='nav-element'>Bug Tracking</span>
                </Link>
