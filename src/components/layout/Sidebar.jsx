@@ -33,7 +33,7 @@ function Sidebar() {
                   <i class="bi bi-people-fill"></i>
                   <span className='nav-element'>Community</span>
                </Link>
-               <Link className={`section ${location.pathname === "/complaints" ? "active" : ""}`} to="/complaints">
+               <Link className={`section ${location.pathname === "/resources" ? "active" : ""}`} to="/resources">
                   <i class="bi bi-file-earmark-text-fill"></i>
                   <span className='nav-element'>Resources</span>
                </Link>
