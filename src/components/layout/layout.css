@@ -29,13 +29,13 @@
   padding: 24px;
 }
 .sidebar-admin{
+  top: 0;
+  width: 200px;
   display: flex;
+  padding: 12px;
+  position: fixed;
   flex-direction: column;
   background-color: #ffffff;
-  width: 200px;
-  position: fixed;
-  top: 0;
-  padding: 12px; 
   scroll-behavior: smooth;
 }
 .sidebar-admin a{
@@ -76,7 +76,7 @@
   color: #2563EB;
 }
 .section{
-  margin: 10px 0;
+  margin: 3px 0;
   width: 85%;
   padding: 5% 3%;
   border-radius: 2px;

@@ -110,3 +110,38 @@ button{
     font-size: 12px;
     line-height: 17px;
 }
+.p{
+    color: #959595;
+}
+.assistant{
+    display: flex;
+    flex-direction: column;
+}
+.assistant h1, .assistant p{
+    text-align: center;
+}
+.assistant h1{
+    margin: 0%;
+}
+.assist{
+    width: 60%;
+    display: flex;
+    margin-top: 40px;
+    place-self: center;
+    flex-direction: column;
+}
+.box-suggest{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.suggest{
+    width: 20%;
+    padding: 20px;
+    color: #2563EB;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 15px 15px 0px;
+    border: 1px solid #c3c3c3;
+}
