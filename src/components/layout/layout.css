@@ -276,10 +276,29 @@
 .split-screen .checkbox input{
   width: 12px;
 }
-.split-screen .checkbox textarea{
+.split-screen .bug-level textarea{
   margin-top: 0;
   height: 100px;
 }
-.split-screen .checkbox textarea::placeholder{
-  font-size: 14px;
+.wrap{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 10px 0 20px 0;
+}
+.wrap div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrap input{
+  margin: 0%;
+  width: 15px;
+}
+.wrap label{
+  margin-right: 10px;
+}
+.split-screen textarea::placeholder{
+  font-size: 12px;
+
 }

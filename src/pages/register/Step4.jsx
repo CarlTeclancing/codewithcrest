@@ -43,7 +43,7 @@ function Step4() {
         </div>
 
         <div className="bug-level">
-            <h4>How often do you code?</h4>
+            <label>How often do you code?</label>
             <div className="checkbox">
                 <input type="radio" value="" /><label htmlFor="">Daily</label>
                 <input type="radio" value="" /><label htmlFor="">Weekly</label>
@@ -51,13 +51,45 @@ function Step4() {
                 <input type="radio" value="" /><label htmlFor="">Occasionally</label>
                 <input type="radio" value="" /><label htmlFor="">Rarely</label>
             </div>
-            <h4>Describe Your Programming Experience</h4>
-            <textarea name="" id="" placeholder='Tell us about your programming journey, projects you have worked on, technologies  you have used, and any notable achievements or challenges you have faced'></textarea>
-        </div>
+        </div><br />
 
+        <label>Describe Your Programming Experience</label>
+        <textarea name="" id="" placeholder='Tell us about your programming journey, projects you have worked on, technologies  you have used, and any notable achievements or challenges you have faced'></textarea><br />
+
+        <label htmlFor="">What types of projects have you worked on?</label>
+        
+        <div className='wrap'>
+            <div>
+                <input type="checkbox" /><label htmlFor="">Web Development</label>
+            </div>
+            <div>
+                <input type="checkbox" /><label htmlFor="">Machine Learning</label>
+            </div>
+            <div>
+                <input type="checkbox" /><label htmlFor="">DevOps/Infrastructure</label>
+            </div>
+            <div>
+                <input type="checkbox" /><label htmlFor="">Mobile Development</label>
+            </div>
+            <div>
+                <input type="checkbox" /><label htmlFor="">Desktop Applications</label>
+            </div>
+            <div>
+                <input type="checkbox" /><label htmlFor="">API Development</label>
+            </div>
+            <div>
+                <input type="checkbox" /><label htmlFor="">Data Science</label>
+            </div>
+            <div>
+                <input type="checkbox" /><label htmlFor="">Game Development</label>
+            </div>
+            <div>
+                <input type="checkbox" /><label htmlFor="">Database Design</label>
+            </div>
+        </div>
         <div className="buttons">
             <Link className='back' to='/step2'>Back</Link>
-            <Link className='next-step' to='/step4'>Next</Link>
+            <Link className='next-step' to='/login'>Finish</Link>
         </div>
     </SplitLayout>
   )
