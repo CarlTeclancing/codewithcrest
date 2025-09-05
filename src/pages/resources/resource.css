@@ -131,17 +131,21 @@ button{
     flex-direction: column;
 }
 .box-suggest{
+    /* border:solid 1px red; */
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    gap: 10px;
+    justify-content: space-evenly;
 }
 .suggest{
-    width: 20%;
+    cursor: pointer;
     padding: 20px;
+    font-size: smaller;
     color: #2563EB;
     text-align: center;
     border-radius: 5px;
-    margin: 0 15px 15px 0px;
+    font-weight: bold;
     border: 1px solid #c3c3c3;
 }

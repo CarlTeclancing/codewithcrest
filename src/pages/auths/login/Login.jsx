@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import SplitLayout from '../../components/SplitLayout'
+import SplitLayout from '../../../components/SplitLayout'
 function Login() {
   return (
     <SplitLayout>
@@ -19,7 +19,7 @@ function Login() {
             <button>Login</button>
         </form>
 
-        <p>Do not have an account? <Link to="/step1">Register</Link></p>
+        <p>Do not have an account? <Link to="/register">Register</Link></p>
     </SplitLayout>
   )
 }
