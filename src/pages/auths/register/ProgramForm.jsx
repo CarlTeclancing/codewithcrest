@@ -53,7 +53,7 @@ function Program() {
         <SplitNav/>
 
         <div className="assist step3">
-            <h4>Internship Program</h4><br />
+            <h4>Internship Program <span style={{color:'crimson'}} >*</span></h4><br />
             <div className="box-suggest">
                 {programs.map((program ,idx) => (
                     <div style={{backgroundColor:info.program == program.code ? '#2563EB':'',}} className="suggest" key={idx} onClick={()=>setInfo({...info ,program:program.code})}>
@@ -63,18 +63,18 @@ function Program() {
             </div>
         </div>
 
-        <h4>Duration</h4>
+        <h4>Duration <span style={{color:'crimson'}} >*</span></h4>
 
-        <div class="query">
-            <div class="query1">
+        <div className="query">
+            <div className="query1">
                 <input type="radio" id='1m' className="radio" name="Enquiry" onClick={()=>setInfo({...info ,duration:1})} />
                 <label htmlFor="1m">1 month</label>
             </div>
-            <div class="query1">
+            <div className="query1">
                 <input type="radio" id='2m' className="radio" name="Enquiry" onClick={()=>setInfo({...info ,duration:2})}/>
                 <label htmlFor="2m">2 months</label>
             </div>
-            <div class="query1">
+            <div className="query1">
                 <input type="radio" id='3m' className="radio" name="Enquiry" onClick={()=>setInfo({...info ,duration:3})}/>
                 <label htmlFor="3m">3 months</label>
             </div>

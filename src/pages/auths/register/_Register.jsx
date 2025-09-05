@@ -22,7 +22,7 @@ function Register() {
         try{
             const  {email ,password  ,confirm} = info
             if(confirm != password){
-                return
+                return setError('Passwords must be identical')
             }
             const response = await fetch(`${HOST_NAME}/api/auth/register` ,{
                 method:'post',
@@ -34,6 +34,7 @@ function Register() {
             const data = await response.json()
             console.log(data);
             if(response.ok){
+                await localStorage.setItem('user' ,data.user)
                 navigate("/personal-information")
             }else{
                 setError(data.error)
@@ -90,8 +91,8 @@ function Register() {
             /> <br/><br/>
         
             <div className="agree">
-                <input type="checkbox" className='radio' name="" id="" required/>
-                <label htmlFor="">Agree To The Terms And Conditions</label>
+                <input type="checkbox" className='radio' name="" id="terms" required/>
+                <label htmlFor="terms">Agree To The Terms And Conditions</label>
             </div>
             <div style={{ padding:5,textAlign:'center' ,color:'crimson' ,fontSize:'smaller'}}> {error ? error : ''} </div>
             <button className='next' disabled={loading}>{!loading ? 'Register & Continue':'wait a moment...'}</button>

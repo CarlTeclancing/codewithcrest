@@ -1,29 +1,48 @@
 import React, { useState } from 'react'
-// import axios from "axios"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import SplitLayout from '../../../components/SplitLayout'
+import { HOST_NAME } from '../../../../globals';
+
+
 function Login() {
 
+  const navigate = useNavigate()
   const [email, setEmail]= useState("");
   const [password, setPassword]= useState("");
+  const [loading ,setLoading] = useState(false)
+  const [error ,setError] = useState('')
 
   const handleSubmit= async (e) =>{
     e.preventDefault();
-    // try {
+    setLoading(true)
+    setError('')
+    try {
       
-    //   const res = await axios.post("http://localhost:5000/api/auth/login", {
-    //     email,
-    //     password,
-    //   });
-
-    //   // If success, you get data from backend
-    //   console.log(res.data);
-    //   alert("Login successful!");
-    // } catch (err) {
-    //   // If backend returns error
-    //   console.error(err.response?.data || err.message);
-    //   alert(err.response?.data?.error || "Something went wrong");
-    // }
+      const response = await fetch(`${HOST_NAME}/api/auth/login` ,{
+        method:'post',
+        headers:{
+          'content-type':'application/json'
+        },
+        body:JSON.stringify({email ,password})
+      })
+      const data = await response.json()
+      console.log(data);
+      
+      if(response.ok){
+        await localStorage.setItem('user' ,JSON.stringify(data.user))
+        navigate("/dashboard")
+      }else{
+        setError(data.error)
+      }
+    } 
+    catch (err) {
+      // If backend returns error
+      console.error(err.response?.data || err.message);
+      // alert(err.response?.data?.error || "Something went wrong");
+    }
+    finally{
+      setLoading(false)
+    }
   }
 
   return (
@@ -51,8 +70,10 @@ function Login() {
               /> <br/><br/>
 
             <Link>Forgotten Password</Link> <br /> <br />
-
-            <button>Login</button>
+            <div style={{padding:'5px', color:'crimson' ,textAlign:'center'}}>
+              {error && error}
+            </div>
+            <button disabled={loading} >Login</button>
         </form>
 
         <p>Do not have an account? <Link to="/register">Register</Link></p>

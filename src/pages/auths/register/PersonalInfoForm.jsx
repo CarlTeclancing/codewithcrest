@@ -16,7 +16,7 @@ function PersonalInfo() {
     async function nextPage(e){
         e.preventDefault()
         await localStorage.setItem('personal',JSON.stringify(info))
-        navigate('/challenges')
+        navigate('/program')
     }
 
     function handleChange(e){
@@ -40,7 +40,7 @@ function PersonalInfo() {
         <SplitNav/>
 
         <form action="" onSubmit={nextPage} >
-            <label htmlFor="name">Full Name</label>
+            <label htmlFor="name">Full Name <span style={{color:'crimson'}}>*</span></label>
             <input 
                 type="text" 
                 name="name" 
@@ -67,7 +67,7 @@ function PersonalInfo() {
                 className='file'
             /><br/><br/>
 
-            <label htmlFor="phone">Phone number</label>
+            <label htmlFor="phone">Phone number <span style={{color:'crimson'}}>*</span></label>
             <input 
                 type="number" 
                 name="phone" 

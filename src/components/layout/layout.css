@@ -110,16 +110,17 @@
 
 /*login style */
 .split-screen{
-  width: 80%;
+  /* width: 80%; */
+  padding: 10px;
   height: auto;
   display: flex;
-  margin-top: 60px;
+  margin-top: 50px;
   margin-bottom: 20px;
   place-self: center;
   border-radius: 4px;
   background-color: #ffffff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
+  /* display: flex; */
   align-items: center;
   flex-wrap: wrap;
   /* border:solid 1px red; */

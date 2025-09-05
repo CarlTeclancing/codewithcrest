@@ -1,5 +1,6 @@
 import React from 'react'
 import Swe from '../assets/Swe.jpg'
+import { useLocation } from 'react-router-dom'
 
 
 function SplitLayout({children}) {
@@ -19,21 +20,24 @@ function SplitLayout({children}) {
 export default SplitLayout
 
 export const SplitNav = () =>{
+
+  const location = useLocation()
+
   return(
     <div className="flex">
-        <div className="step">
+        <div className={location.pathname == '/register' ? 'step active':"step"}>
             <p className='span'>1</p>
             <p>Account set up</p>
         </div>
-        <div className="step">
+        <div className={location.pathname == '/personal-information' ? 'step active':"step"}>
             <p className='span'>2</p>
             <p>Personal information</p>
         </div>
-        <div className="step">
+        <div className={location.pathname == '/program' ? 'step active':"step"}>
             <p className='span'>3</p>
             <p>Program  & Duration</p>
         </div>
-        <div className="step">
+        <div className={location.pathname == '/experience' ? 'step active':"step"}>
             <p className='span'>4</p>
             <p>Experience </p>
         </div>
