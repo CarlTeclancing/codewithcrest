@@ -1,22 +1,56 @@
-import React from 'react'
-import Button from './components/Button'
-import Navigation from './components/Navigation'
-import VideoList from './components/VideoList'
-import FloatingElements from './components/FloatingElements'
-import Fetching from './components/api/Fetching'
-import FetchData from './crud/FetchData'
+import React  from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+import Dashboard from './pages/Dashboard/Dashboard.jsx'
+import Ranking from './pages/ranking/Ranking.jsx'  
+import Labs from './pages/labs/Labs.jsx'
+import Submission from './pages/submission/Submission.jsx'
+
+import SubmitLab from './pages/submitLab/SubmitLab.jsx'
+import Community from './pages/community/Community.jsx'
+import Resources from './pages/resources/Resources.jsx'
+import Assistant from './pages/assistant/Assistant.jsx'
+import Login from './pages/auths/login/Login.jsx'
+import Register from './pages/auths/register/_Register.jsx'
+import PersonalInfo from './pages/auths/register/PersonalInfoForm.jsx'
+import Experience from './pages/auths/register/ExperienceForm.jsx'
+import Program from './pages/auths/register/ProgramForm.jsx'
+import { UserProvider } from './providers/userProvider.jsx'
 
 function App() {
+
+  const router = createBrowserRouter([
+    {path:'/', element:<Login />},
+    // No landing page
+    // Auth pages
+    {path:'/login',  index:true,element:<Login />},
+    {path:'/register', element:<Register />},
+    {path:'/personal-information', element:<PersonalInfo />},
+    {path:'/program', element:<Program />},
+    {path:'/experience', element:<Experience/>},
+
+    // Dashboard pages
+    {path:'/dashboard', element:<Dashboard />},
+    {path:'/submit', element:<Labs />},
+    {path:'/submissions', element:<Submission />},
+    
+    {path:'/submitlab', element:<SubmitLab />},
+    {path:'/community', element:<Community />},
+    {path:'/ranking', element:<Ranking />},
+    {path:'/resources', element:<Resources />},
+
+    // {path:'/ranking', element:<Ranking />},
+    // {path:'/bugtracking', element:<BugTracking />},
+    // {path:'/hello', element:<Hello />},
+    // {path:'/assistant', element:<Assistant />}
+
+  ]);
+
   return (
     <>
-      <Navigation />
-      <FloatingElements />
-      <h1 className="heading">Learn By Watching Tutorials</h1>
-
-      <VideoList />
-      <Fetching />
-      <FetchData />
-
+      <UserProvider>
+        <RouterProvider router={router} />
+      </UserProvider>
     </>
   )
 }

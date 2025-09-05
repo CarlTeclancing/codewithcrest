@@ -186,6 +186,15 @@
   align-items: center;
   
 }
+.step.active .span {
+  background-color: #FFBC10 !important; 
+}
+.step.active p{
+  color: #FFBC10;
+}
+.step p{
+  font-size: 10px;
+}
 .span{
   color: white !important;
   font-size: 12px;
@@ -193,10 +202,8 @@
   border-radius: 50%;
   background-color: #aeaeae;
 }
-.step p{
-  font-size: 10px;
-}
 .agree{
+  width: 100%;
   display: flex;
   align-items: center;
 }

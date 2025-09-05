@@ -1,18 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
+// import axios from "axios"
 import { Link } from 'react-router-dom'
 import SplitLayout from '../../../components/SplitLayout'
 function Login() {
+
+  const [email, setEmail]= useState("");
+  const [password, setPassword]= useState("");
+
+  const handleSubmit= async (e) =>{
+    e.preventDefault();
+    // try {
+      
+    //   const res = await axios.post("http://localhost:5000/api/auth/login", {
+    //     email,
+    //     password,
+    //   });
+
+    //   // If success, you get data from backend
+    //   console.log(res.data);
+    //   alert("Login successful!");
+    // } catch (err) {
+    //   // If backend returns error
+    //   console.error(err.response?.data || err.message);
+    //   alert(err.response?.data?.error || "Something went wrong");
+    // }
+  }
+
   return (
     <SplitLayout>
         <h2>Welcome Back to <br /> <span>CODE<span>with</span>CREST</span></h2>
         <p>Meet and share your experience with others across the globe.</p>
 
-        <form action="">
-            <label htmlFor="">Email Address</label>
-            <input type="email" name="" id="" placeholder='Enter your email address'/><br /><br />
+        <form onSubmit={handleSubmit}>
+            <label htmlFor="email">Email Address</label>
+            <input 
+              type="email" 
+              name="email" 
+              placeholder='Enter your email address'
+              value={email}
+              onChange={(e)=> setEmail(e.target.value)}
+              /><br /><br />
                 
             <label htmlFor="">Password</label>
-            <input type="password" name="" id="" placeholder='Enter your password'/> <br/><br/>
+            <input 
+              type="password" 
+              name="password" 
+              placeholder='Enter your password'
+              value={password}
+              onChange={(e)=> setPassword(e.target.value)}
+              /> <br/><br/>
 
             <Link>Forgotten Password</Link> <br /> <br />
 
