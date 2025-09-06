@@ -16,7 +16,7 @@
   font-size: 14px;
 }
 .p-10{
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 .container-2{
   width: calc(100% - 240px);
@@ -24,69 +24,64 @@
   margin-left: 224px;
   overflow-x: hidden;
 }
-.col{
-  width: 100%;
-  padding: 24px;
+.guidelines{
+  /* border: solid 1px cyan; */
+  padding: 5px;
 }
-.sidebar-admin{
-  top: 0;
-  width: 200px;
+.guide{
+  width: 250px;
+  border-radius: 10px;
+  font-size: small;
+  border: 1px solid #93B4FD;
+  background-color: #F0F9FF;
+  padding:10px;
   display: flex;
-  padding: 12px;
-  position: fixed;
   flex-direction: column;
-  background-color: #ffffff;
-  scroll-behavior: smooth;
+  color: grey;
 }
-.sidebar-admin a{
-  text-decoration: none;
+.guide h3{
   color: black;
-  margin-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.527);
-  border-radius: 3px;
-  transition: 0.3s, color 0.3s;
-  display: flex;
+  /* line-height: normal; */
 }
+.guide ul{
+  list-style: none;
+}
+.guide-container{
+  /* width: 100%; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  /* justify-content: space-between; */
+}
+.guide-container div:first-child{
+  border-left: 4px solid var(--primary-color);
+}
+.guide-container div:nth-child(2){
+  border-left: 4px solid var(--primary-error-color);
+  /* margin-left: 12px; */
+}
+.guide-container div:nth-child(3){
+  border-left: 4px solid var(--completed);
+  /* margin-left: 12px; */
+}
+
 .nav-element{
   margin-left: 12px;
   font-size: 14px;
   width: 100%;
 }
-.navbar{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+
 .head{
   padding: 10px;
   height:59px;
-  width: 98%;
+  /* width: 98%; */
   display: flex;
   align-items: center;
   justify-content: space-between !important;
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.logo{
- margin:0px;
- font-weight: bolder;
- color: #FFBC10;
-}
-.logo span{
-  color: #2563EB;
-}
-.section{
-  margin: 3px 0;
-  width: 85%;
-  padding: 5% 3%;
-  border-radius: 2px;
-}
-.section:hover, .section.active{
-  cursor: pointer;
-  border-radius: 2px;
-  color: white;
-  background-color: #2563EB;
-}
+
 .icon{
   margin-right: 10px;
 }
@@ -110,13 +105,14 @@
 
 /*login style */
 .split-screen{
-  /* width: 80%; */
+  width: fit-content;
   padding: 10px;
-  height: auto;
+  /* height: auto; */
   display: flex;
   margin-top: 50px;
   margin-bottom: 20px;
-  place-self: center;
+  /* place-self: center; */
+  margin:50px auto;
   border-radius: 4px;
   background-color: #ffffff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -319,6 +315,17 @@
 .split-screen textarea::placeholder{
   font-size: 12px;
 
+}
+
+
+.dashboard-container{
+  padding: 10px;
+  padding-bottom: 50px;
+  /* border: solid 1px green; */
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 @media only screen and (max-width:500px) {

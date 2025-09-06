@@ -3,7 +3,6 @@ import './community.css'
 import { Link } from 'react-router-dom'
 import { useState } from "react"
 import Img1 from '../../assets/img1.jpg'
-import Layout from '../../components/layout/Layout.jsx'
 import CommunityPost from '../../components/CommunityPost.jsx'
 
 const posts = [
@@ -51,10 +50,13 @@ function Community() {
     }
   };
   return (
-    <Layout>
+    <div className='dashboard-container'>
+      <div>
+        <button>Make a Post</button>
+      </div>
         <div className="community-page">
             <div className="left-side">
-                <div className="form-post">
+                {/* <div className="form-post">
                     <div className="firstline">
                         <img src={Img1} alt="" />
                         <h3>Share Your Project</h3>
@@ -86,7 +88,7 @@ function Community() {
                         <button>Post Project</button>
                        </div>
                     </form>
-                </div>
+                </div> */}
 
                 {posts.map((post, index) => (
                 <CommunityPost
@@ -104,7 +106,7 @@ function Community() {
 
             <div className="right-side">
                 <div className="form-post">
-                    <h3>Trending Topics</h3>
+                    <h3>🔥 Trending Topics</h3>
                     <p className="trends">
                         <span className="hashtag">#Javascript</span>  
                         <span>142 posts</span>
@@ -124,34 +126,35 @@ function Community() {
                 </div>
 
                 <div className="form-post">
-                    <h3>Top Contributors</h3>
+                    <h3>👑 Top Contributors</h3>
                     <div className="top-contributors">
                         <div className="contributors">
                             <img src="" alt="" />
                             <div className="contributor-info">
-                                <p className="name">Mike Rodriguez</p>
+                                <span className="name">Mike Rodriguez</span>
                                 <span className="contributor-point">1,240 points</span>
                             </div>
                         </div>
                         <div className="contributors">
                             <img src="" alt="" />
                             <div className="contributor-info">
-                                <p className="name">Emma Wilson</p>
+                                <span className="name">Emma Wilson</span>
                                 <span className="contributor-point">1,180 points</span>
                             </div>
                         </div>
                         <div className="contributors">
                             <img src="" alt="" />
                             <div className="contributor-info">
-                                <p className="name">David Kim</p>
+                                <span className="name">David Kim</span>
                                 <span className="contributor-point">1,095 points</span>
                             </div>
                         </div>
                     </div>
+                    <br />
                 </div>
 
                 <div className="form-post">
-                    <h3>Suggested Projects</h3>   
+                    <h3>💡 Suggested Projects</h3>   
                     <div className="suggestion">
                         <h4>Todo App with Local Storage</h4>
                         <p>Built a task manager using vanilla Js</p>
@@ -171,7 +174,7 @@ function Community() {
                 </div>
             </div>
         </div>
-    </Layout>
+    </div>
   )
 }
 

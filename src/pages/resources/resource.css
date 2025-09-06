@@ -10,7 +10,7 @@ button{
     padding: 10px;
     border-radius: 5px;
     flex-direction: column;
-    border: 1px solid #959595;
+    border: 1px solid rgba(0,0,0,0.2);
 }
 .nav-link{
     display: flex;
@@ -34,38 +34,51 @@ button{
     flex-direction: left;
 }
 .resource-block{
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     overflow: hidden;
+    justify-content: space-between;
 }
 .resource-box{
-    width: 300px;
-    padding: 10px 15px;
-    margin-right: 15px;
+    min-width: 275px;
+    height: 150px;
+    padding: 0px 15px;
+    /* margin-right: 15px; */
     border-radius: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #959595;
+    /* margin-bottom: 10px; */
+    border: 1px solid rgba(0,0,0,0.2);
 }
 .left-block{
-    width: 73%;
+    /* width: 73%; */
+    flex: 1;
+    /* border: solid 1px red; */
     display: flex;
+    gap: 10px;
+    row-gap: 0px;
     flex-wrap: wrap;
 }
 .right-block{
- width: 23%;
+ width: 200px;
+ font-size: small;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
 }
 .right-bar{
- width: 100%;
- margin-bottom: 15px;
  padding:10px 15px;
  border-radius: 5px;
- border: 1px solid #959595;
+ border: 1px solid rgba(0,0,0,0.2);
 }
 .post-profile-info .name{
     margin: 0%;
 }
+.headline{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
 .headline span{
-    text-align: center;
+    /* text-align: center; */
 }
 .top-value{
     color: #2563EB;

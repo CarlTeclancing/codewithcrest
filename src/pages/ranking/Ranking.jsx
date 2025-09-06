@@ -2,7 +2,7 @@ import React from 'react'
 import './ranking.css'
 import { Link } from 'react-router-dom'
 import UserCard from '../../components/UserCard'
-import Layout from '../../components/layout/Layout'
+
 const users = [
   { name: 'De Duke Eric', points: 1200, profilePic: '../../assets/img1.jpg' },
   { name: 'Bob Smith', points: 950, profilePic: '/avatars/bob.jpg' }
@@ -10,7 +10,7 @@ const users = [
 
 function Ranking() {
   return (
-    <Layout>
+    <div className='dashboard-container'>
         <div className="box-updates">
             <div className="box">
                 <h4>Total Points This Week</h4>
@@ -92,7 +92,7 @@ function Ranking() {
                 </table>
             </div>
         </div>
-    </Layout>
+    </div>
   )
 }
 

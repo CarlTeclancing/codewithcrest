@@ -1,20 +1,18 @@
 import React from 'react'
 import './resource.css'
-import { Link } from 'react-router-dom'
 import Resource from '../../components/Resource'
-import Layout from '../../components/layout/Layout'
 
 const resources = [
-  { name: 'Vs Code Guide', type:'PDF', pic: '../../assets/img1.jpg', date:'2024-01-15', hashtags:'#Frontend  #Beginner  #Essentials' },
-  { name: 'Vs Code Guide', type:'PDF', pic: '../../assets/img1.jpg', date:'2024-01-15', hashtags:'#Frontend  #Beginner  #Essentials' },
-  { name: 'Vs Code Guide', type:'PDF', pic: '../../assets/img1.jpg', date:'2024-01-15', hashtags:'#Frontend  #Beginner  #Essentials' },
-  { name: 'Vs Code Guide', type:'PDF', pic: '../../assets/img1.jpg', date:'2024-01-15', hashtags:'#Frontend  #Beginner  #Essentials' },
-  { name: 'Vs Code Guide', type:'PDF', pic: '../../assets/img1.jpg', date:'2024-01-15', hashtags:'#Frontend  #Beginner  #Essentials' },
+  { name: 'Vs Code Guide', type:'PDF', pic: '../../assets/img1.jpg', date:'2024-01-15', hashtags:['#Frontend' ,'  #Beginner' ,'  #Essentials'] },
+  { name: 'Vs Code Guide', type:'PDF', pic: '../../assets/img1.jpg', date:'2024-01-15', hashtags:['#Frontend' ,'  #Beginner' ,'  #Essentials'] },
+  { name: 'Vs Code Guide', type:'PDF', pic: '../../assets/img1.jpg', date:'2024-01-15', hashtags:['#Frontend' ,'  #Beginner' ,'  #Essentials'] },
+  // { name: 'Vs Code Guide', type:'PDF', pic: '../../assets/img1.jpg', date:'2024-01-15', hashtags:['#Frontend' ,'  #Beginner' ,'  #Essentials'] },
+  // { name: 'Vs Code Guide', type:'PDF', pic: '../../assets/img1.jpg', date:'2024-01-15', hashtags:['#Frontend' ,'  #Beginner' ,'  #Essentials'] },
   
 ];
 function Resources() {
   return (
-    <Layout>
+    <div className='dashboard-container'>
         <div className='headline'>
             <h1>Resources Hub</h1>
             <button>More Resources</button>
@@ -23,13 +21,13 @@ function Resources() {
         <div className="library">
             <div className="nav-link">
                 <h2 className='h3'>Resource Library</h2>
-                <div className="nav">
+                {/* <div className="nav">
                   <Link className='bln'>All</Link>  
                   <Link className='bln'>Tools</Link>  
                   <Link className='bln'>Documents</Link>  
                   <Link className='bln'>Videos</Link>  
                   <Link className='bln'>Essentials</Link>  
-                </div>
+                </div> */}
             </div>
 
             
@@ -51,7 +49,7 @@ function Resources() {
                  <div className='right-bar'>
                    <div className="headline">
                       <h3>Become a Top Coder</h3>
-                      <span className='bln'>Top Coder</span>
+                      {/* <span className='bln'>Top Coder</span> */}
                    </div>
 
                   <div >
@@ -86,7 +84,7 @@ function Resources() {
               </div>
             </div>
         </div>
-    </Layout>
+    </div>
   )
 }
 

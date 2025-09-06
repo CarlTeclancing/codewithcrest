@@ -1,36 +1,40 @@
-import React from 'react'
-import Layout from '../../components/layout/Layout'
+import React ,{useState ,useEffect} from 'react'
 import GuideLines from '../../components/GuideLines'
 
 const Submission = () => {
+
+  const [submissions ,setSubmissions] = useState()
+  const [error ,setError] = useState('')
+  const [loading ,setLoading] = useState(false)
+
   return (
-    <Layout>
-        <h1>Submition <span>Analytics</span> </h1>
+    <div className='dashboard-container'>
+
       <div className="box-updates">
         <div className="box">
-          <p>Weekly Task</p>
+          <p>Labs Submited</p>
           <span className='yellow'>--</span>
           <p>--<span></span> Vs Last Month</p>
         </div>
         <div className="box">
-          <p>Total Points</p>
+          <p>Pending Review</p>
           <span className='yellow'>--</span>
           <p>--<span></span> Vs Last Month</p>
         </div>
         <div className="box">
-          <p>Task Completed</p>
+          <p>Rejected</p>
           <span className='yellow'>--</span>
           <p>--<span></span> Vs Last Month</p>
         </div>
         <div className="box">
-          <p>Pending Tasks</p>
+          <p>Total submission</p>
           <span className='yellow'>--</span>
           <p>--<span></span> Vs Last Month</p>
         </div>
       </div>
 
-    <div className="updates">
-        <h3>Resent Submissions</h3>
+      <div className="updates">
+        <h3>Recent Submissions</h3>
         <table>
          <thead>
            <tr>
@@ -38,7 +42,7 @@ const Submission = () => {
                <th>Date Submited</th>
                <th>Status</th>
                <th>Feedback</th>
-               <th>Points Gained</th>
+               {/* <th>Points Gained</th> */}
                <th>Action</th>
            </tr>
          </thead>
@@ -48,7 +52,7 @@ const Submission = () => {
             <td>0</td>
             <td>0</td>
             <td>0</td>
-            <td>0</td>
+            {/* <td>0</td> */}
             <td className='actions'></td>
            </tr>
          </tbody>
@@ -56,7 +60,7 @@ const Submission = () => {
       </div>
 
       <GuideLines />
-    </Layout>
+    </div>
   )
 }
 

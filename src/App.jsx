@@ -1,5 +1,5 @@
 import React  from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider ,Route ,Routes } from 'react-router-dom'
 
 import Dashboard from './pages/Dashboard/Dashboard.jsx'
 import Ranking from './pages/ranking/Ranking.jsx'  
@@ -16,6 +16,7 @@ import PersonalInfo from './pages/auths/register/PersonalInfoForm.jsx'
 import Experience from './pages/auths/register/ExperienceForm.jsx'
 import Program from './pages/auths/register/ProgramForm.jsx'
 import { UserProvider } from './providers/userProvider.jsx'
+import DashboardLayout from './Layout/DashboardLayout.jsx'
 
 function App() {
 
@@ -30,14 +31,24 @@ function App() {
     {path:'/experience', element:<Experience/>},
 
     // Dashboard pages
-    {path:'/dashboard', element:<Dashboard />},
-    {path:'/submit', element:<Labs />},
-    {path:'/submissions', element:<Submission />},
-    
-    {path:'/submitlab', element:<SubmitLab />},
-    {path:'/community', element:<Community />},
-    {path:'/ranking', element:<Ranking />},
-    {path:'/resources', element:<Resources />},
+    {
+      path:'/dashboard', 
+      element:<DashboardLayout/>,
+      children:[
+        {
+          index:true,
+          element:<Dashboard/>
+        },
+        {path:'submit', element:<Labs />},
+        {path:'submissions', element:<Submission />},
+        
+        {path:'submitlab', element:<SubmitLab />},
+        {path:'community', element:<Community />},
+        {path:'ranking', element:<Ranking />},
+        {path:'resources', element:<Resources />},
+
+      ]
+    },
 
     // {path:'/ranking', element:<Ranking />},
     // {path:'/bugtracking', element:<BugTracking />},
@@ -56,3 +67,11 @@ function App() {
 }
 
 export default App
+
+const Temp = () => {
+  return(
+    <>
+      testing temp comp
+    </>
+  )
+}

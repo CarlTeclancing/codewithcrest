@@ -6,14 +6,20 @@ function Resource({name,type,pic,hashtags,date}) {
         <div className="post-profile">
             <img src={pic} alt="" />
             <div className="post-profile-info">
-                <p className="name">{name}</p>
-                <p className="time">{type}</p>
+                <span className="name">{name}</span>
+                <span className="time">{type}</span>
             </div>
         </div>
-        <span className='hashtag'>{hashtags}</span>
+
+        <div style={{display:'flex' ,gap:10 ,padding:'10px 0px'}}>
+          {hashtags.map((hashtag ,idx) => (
+            <span className='hashtag' key={idx}>{hashtag}</span>
+          ))}
+
+        </div>
         
         <div className="headline">
-            <p>Added: <span className='add-date'>{date}</span></p>
+            <span style={{color:'grey', fontSize:'small'}}>Added: <span className='add-date'>{date}</span></span>
             <button>Download</button>
         </div>
     </div>

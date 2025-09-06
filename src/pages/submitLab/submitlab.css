@@ -1,38 +1,55 @@
+.labs-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+    gap: 15px;
+}
 .lab-info{
-    width: 90%;
     display: flex;
     padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 30px;
+    border-radius: 10px;
     flex-direction: column;
-    border: 1px solid #FFBC10;
+    border: 1px solid rgba(168, 122, 5 ,0.5);
 }
 .headline{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    line-height: 0%;
+}
+.headline h3{
+    /* font-size: x-large; */
+    font-weight:800;
 }
 .bottom-line{
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
+    font-size: small;
 }
 .points{
-    font-size: 14px;
+    font-size: small;
 }
 .hashtags{
-    width: auto;
-    padding: 3px 6px;
+    /* width: auto; */
+    border: solid 1px rgba(0,0,255 ,0.3);
+    padding: 10px;
+    font-size: x-small;
     color: #006EFF;
     border-radius: 6px;
     background-color: #E3F2FD;
+}
+.inactive-btn{
+    color: #2563EB;
+    background-color: white;
+    border: solid 1px #2563EB;
 }
 .deadline{
     color: #006EFF;
     margin-right: 25px;
 }
 .task{
-    color: #959595;
+    color: grey;
 }
 button{
     color: black;

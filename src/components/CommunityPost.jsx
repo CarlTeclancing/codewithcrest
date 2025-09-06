@@ -6,18 +6,18 @@ function CommunityPost({name, time, pic, code, title, description, hashtags}) {
         <div className="post-profile">
             <img src={pic} alt="" />
             <div className="post-profile-info">
-                <p className="name">{name}</p>
-                <p className="time">{time}</p>
+                <span className="name">{name}</span>
+                <span className="time">{time}</span>
             </div>
         </div>
 
-        <h4>{title}</h4>
-        <p>{description}</p>
+        <strong>{title}</strong>
+        <p style={{color:'grey'}} >{description}</p>
         <p>{code}</p>
         <span className='hashtag'>{hashtags}</span>
-        <div className="icons">
+        {/* <div className="icons">
 
-        </div>
+        </div> */}
     </div>
   )
 }

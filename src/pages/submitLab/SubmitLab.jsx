@@ -1,43 +1,100 @@
-import React from 'react'
+import React ,{useState ,useEffect} from 'react'
 import './submitlab.css'
 import { Link } from 'react-router-dom'
 import LabInfo from '../../components/LabInfo.jsx'
 import Lab from '../../components/Lab.jsx'
 import Layout from '../../components/layout/Layout.jsx'
+import { HOST_NAME } from '../../../globals.js'
 
 const lab = [
-  { title: 'JavaScript Loops Lab', hashtags:'#Javascript #Loops #Beginner', task:'Create interactive loops using for while, and for Each methods. Implement counter functionality and array manipulation techniques.' , deadline: 'Due in 2 days', point: '50pts' },
+  { title: 'JavaScript Loops Lab', hashtags:['#Javascript', '#Loops' ,'#Beginner'], task:'Create interactive loops using for while, and for Each methods. Implement counter functionality and array manipulation techniques.' , deadline: 'Due in 2 days', point: '50pts' },
+    { title: 'JavaScript Loops Lab', hashtags:['#Javascript', '#Loops' ,'#Beginner'], task:'Create interactive loops using for while, and for Each methods. Implement counter functionality and array manipulation techniques.' , deadline: 'Due in 2 days', point: '50pts' },
 ];
 
 function SubmitLab() {
+
+  const [labs , setLabs] = useState()
+  const [loading ,setLoading] = useState(false)
+  const [error ,setError] = useState('')
+
+  async function getLabs(){
+    try{
+      setLoading(true)
+      setError('')
+      const response = await fetch(`${HOST_NAME}/api/lab/user/${'user.id'}`)
+      const data = await response.json()
+      if(response.ok){
+        // setLabs(data.labs)
+      }else{
+        setError(data.error)
+      }
+
+    }
+    catch(e){
+      console.log(e);
+      
+    }finally{
+      setLoading(false)
+    }
+  }
+
+  useEffect(()=>{
+    // getLabs()
+  },[0])
+
   return (
-    <Layout>
-        {lab.map((lab, index) => (
-        <LabInfo
-          key={index}
-          title={lab.title}
-          hashtags={lab.hashtags}
-          task={lab.task}
-          deadline={lab.deadline}
-          point={lab.point}
+    <div className='dashboard-container'>
 
-        />
-      ))}
+      <div style={{lineHeight:'100%'}}>
+        <h3>Active lab</h3>
+        <div className='labs-container'>
+          {lab.slice(0 ,1).map((lab, index) => (
+            <LabInfo
+              key={index}
+              title={lab.title}
+              hashtags={lab.hashtags}
+              task={lab.task}
+              deadline={lab.deadline}
+              point={lab.point}
+              active={true}
+            />
+          ))}
+        </div>
+      </div>
 
-      <h3>Submit Your Work</h3>
+      <div style={{lineHeight:'100%'}}>
+        <h3>Available labs</h3>
+        <div className='labs-container'>
+          {lab.map((lab, index) => (
+            <LabInfo
+              key={index}
+              title={lab.title}
+              hashtags={lab.hashtags}
+              task={lab.task}
+              deadline={lab.deadline}
+              point={lab.point}
+            />
+          ))}
+        </div>
+      </div>
+
+      
+
+      {/* <h3>Submit Your Work</h3>
       <div className="submit-option">
         <button className={`button ${location.pathname === "" ? "active" : ""}`}>Upload File</button>
         <button className={`button ${location.pathname === "" ? "active" : ""}`}>Submit Link</button>
-      </div>
+      </div> */}
 
-      <div className="upload">
+      {/* <div className="upload">
         <form action="">
             <p>Drag and drop your files here! or</p>
             <input type="file" /><br />
             <span>Accepted formats: .zip, .html, .js, .py, .txt</span>
         </form>
-      </div>
-      <div className="nav">
+      </div> */}
+
+      {/* <div className="nav">
         <select name="" id="">
             <option value="">Show All</option>
         </select>
@@ -47,8 +104,9 @@ function SubmitLab() {
             <Link>Sort</Link>
             <Link>Clear All</Link>
         </div>
-      </div>
-      <table>
+      </div> */}
+
+      {/* <table>
         <thead>
         <tr>
             <th>Id</th>
@@ -77,8 +135,9 @@ function SubmitLab() {
             <td>Delivered</td>
         </tr>
         </tbody>
-      </table>
-    </Layout>
+      </table> */}
+
+    </div>
   )
 }
 
