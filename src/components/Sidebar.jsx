@@ -12,7 +12,7 @@ function Sidebar() {
          <h2 className="logo p-10"><span>CODE</span>with<span>CREST</span></h2>
          <div className="navbar p-10">
                <Link className={`section ${location.pathname === "/dashboard" ? "active" : ""}`} to="/dashboard" >
-                  <i class="bi bi-grid-fill"></i>
+                  <i className="bi bi-grid-fill"></i>
                   <span className='nav-element'>Dashboard</span>
                   
                </Link>

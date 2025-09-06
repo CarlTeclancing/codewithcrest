@@ -1,6 +1,7 @@
 import React from 'react'
 import Swe from '../assets/Swe.jpg'
 import { useLocation } from 'react-router-dom'
+import '../styles/authStyles.css'
 
 
 function SplitLayout({children}) {

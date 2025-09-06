@@ -47,3 +47,13 @@
   color: white;
   background-color: #2563EB;
 }
+
+@media screen and (max-width:500px) {
+.sidebar-admin{
+  border: solid 1px red;
+  padding: 0px;
+  max-width: 0px;
+  overflow: hidden;
+}
+
+}
