@@ -2,8 +2,7 @@ import React ,{useState ,useEffect} from 'react'
 import './submitlab.css'
 import { Link } from 'react-router-dom'
 import LabInfo from '../../components/LabInfo.jsx'
-import Lab from '../../components/Lab.jsx'
-import Layout from '../../components/layout/Layout.jsx'
+// import Lab from '../../components/Lab.jsx'
 import { HOST_NAME } from '../../../globals.js'
 
 const lab = [

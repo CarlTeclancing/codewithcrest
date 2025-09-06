@@ -1,6 +1,6 @@
 import React from 'react'
-import  './layout.css'
-import Img1 from '../../assets/img1.jpg'
+// import  './layout.css'
+import Img1 from '../assets/img1.jpg'
 
 
 function Header() {

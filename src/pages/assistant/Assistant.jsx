@@ -1,8 +1,7 @@
 import React from 'react'
-import Layout from '../../components/layout/Layout'
 function Assistant() {
   return (
-    <Layout>
+    <>
         <div className="assistant">
             <h1>How Can I assist you today?</h1>
             <p className='p'>Tap a suggestion below or write your own query</p>
@@ -35,7 +34,7 @@ function Assistant() {
             </form>
         </div>
 
-    </Layout>
+    </>
   )
 }
 

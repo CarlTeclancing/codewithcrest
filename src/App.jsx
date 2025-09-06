@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider ,Route ,Routes } from 'react-router
 
 import Dashboard from './pages/Dashboard/Dashboard.jsx'
 import Ranking from './pages/ranking/Ranking.jsx'  
-import Labs from './pages/labs/Labs.jsx'
 import Submission from './pages/submission/Submission.jsx'
 
 import SubmitLab from './pages/submitLab/SubmitLab.jsx'
@@ -39,9 +38,7 @@ function App() {
           index:true,
           element:<Dashboard/>
         },
-        {path:'submit', element:<Labs />},
         {path:'submissions', element:<Submission />},
-        
         {path:'submitlab', element:<SubmitLab />},
         {path:'community', element:<Community />},
         {path:'ranking', element:<Ranking />},
