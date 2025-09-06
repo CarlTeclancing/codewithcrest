@@ -1,6 +1,6 @@
 import React from 'react'
 
-function LabInfo({ title, hashtags, task, deadline, point, active }) {
+function LabInfo({ title, hashtags, task, deadline, point, active, onClick }) {
   return (
     <div className='lab-info'>
         <div className="headline">
@@ -26,7 +26,7 @@ function LabInfo({ title, hashtags, task, deadline, point, active }) {
                 </div>
             </div>
             <div>
-                <button className={active?'':'inactive-btn'}>{active ? 'Submit lab':'Start lab'}</button>
+                <button onClick={()=>onClick(active)} className={active?'':'inactive-btn'}>{active ? 'Submit lab':'Start lab'}</button>
             </div>
         </div>
     </div>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState } from "react"
 import Img1 from '../../assets/img1.jpg'
 import CommunityPost from '../../components/CommunityPost.jsx'
+import {Modal} from 'react-responsive-modal'
 
 const posts = [
   { name: 'De Duke Eric', pic: '../../assets/img1.jpg', time:'2 hours ago', title:'Weather App with API Integration', description:'Built a responsive weather app using vanilla JavaScript and OpenWeather API. Features include location detection and 5-day forecast.', hashtags:'#JavaScript #API #WebDev' },
@@ -17,6 +18,7 @@ function Community() {
     title: "",
     content: "",
   });
+  const [showModal ,setShowModal] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -51,44 +53,21 @@ function Community() {
   };
   return (
     <div className='dashboard-container'>
+
+      <PostModal 
+        showModal={showModal}
+        setShowModal={setShowModal}
+        formData={formData}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
+
       <div>
-        <button>Make a Post</button>
+        <button onClick={()=>setShowModal(true)} >Make a Post</button>
       </div>
         <div className="community-page">
             <div className="left-side">
-                {/* <div className="form-post">
-                    <div className="firstline">
-                        <img src={Img1} alt="" />
-                        <h3>Share Your Project</h3>
-                    </div>
-                    <form onSubmit={handleSubmit}>
-                      <input
-                        type="text"
-                        name="title"
-                        value={formData.title}
-                        onChange={handleChange}
-                        placeholder="Project title.."
-                     /><br /> 
-                       <br />
-                       
-                      <textarea
-                        name="content"
-                        value={formData.content}
-                        onChange={handleChange}
-                        placeholder="Describe your project.."
-                     ></textarea>
-                       <br />
-                      <span className="hashtags">#Javascript  #HTML  #CSS  #Python</span><br /><br />
-                       
-                       <div className="bottom">
-                        <div className="add">
-                            <Link> Image</Link>
-                            <Link>Code</Link>
-                        </div>
-                        <button>Post Project</button>
-                       </div>
-                    </form>
-                </div> */}
+                
 
                 {posts.map((post, index) => (
                 <CommunityPost
@@ -179,3 +158,50 @@ function Community() {
 }
 
 export default Community
+
+const PostModal = ({showModal ,setShowModal ,handleChange ,handleSubmit ,formData}) => {
+  return(
+    <>
+      <Modal open={showModal} onClose={()=>setShowModal(false)}>
+        <h2>Post Creation</h2>
+        <p>
+          <div className="form-post">
+              <div className="firstline">
+                  <img src={Img1} alt="" />
+                  <h3>Share Your Project</h3>
+              </div>
+
+              <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleChange}
+                  placeholder="Project title.."
+                /><br /> 
+                  <br />
+                  
+                <textarea
+                  name="content"
+                  value={formData.content}
+                  onChange={handleChange}
+                  placeholder="Describe your project.."
+                ></textarea>
+                  <br />
+                <span className="hashtags">#Javascript  #HTML  #CSS  #Python</span><br /><br />
+                  
+                  <div className="bottom">
+                  <div className="add">
+                      <Link> Image</Link>
+                      <Link>Code</Link>
+                  </div>
+                  <button>Post Project</button>
+                  </div>
+              </form>
+          </div>
+
+        </p>
+      </Modal>
+    </>
+  )
+}

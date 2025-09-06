@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import LabInfo from '../../components/LabInfo.jsx'
 // import Lab from '../../components/Lab.jsx'
 import { HOST_NAME } from '../../../globals.js'
+import {Modal} from 'react-responsive-modal'
 
 const lab = [
   { title: 'JavaScript Loops Lab', hashtags:['#Javascript', '#Loops' ,'#Beginner'], task:'Create interactive loops using for while, and for Each methods. Implement counter functionality and array manipulation techniques.' , deadline: 'Due in 2 days', point: '50pts' },
@@ -15,6 +16,7 @@ function SubmitLab() {
   const [labs , setLabs] = useState()
   const [loading ,setLoading] = useState(false)
   const [error ,setError] = useState('')
+  const [showModal ,setShowModal] = useState(false)
 
   async function getLabs(){
     try{
@@ -43,6 +45,8 @@ function SubmitLab() {
 
   return (
     <div className='dashboard-container'>
+      
+      <SubmitLabModal showModal={showModal} setShowModal={setShowModal} />
 
       <div style={{lineHeight:'100%'}}>
         <h3>Active lab</h3>
@@ -56,6 +60,7 @@ function SubmitLab() {
               deadline={lab.deadline}
               point={lab.point}
               active={true}
+              onClick={()=>setShowModal(true)}
             />
           ))}
         </div>
@@ -79,19 +84,6 @@ function SubmitLab() {
 
       
 
-      {/* <h3>Submit Your Work</h3>
-      <div className="submit-option">
-        <button className={`button ${location.pathname === "" ? "active" : ""}`}>Upload File</button>
-        <button className={`button ${location.pathname === "" ? "active" : ""}`}>Submit Link</button>
-      </div> */}
-
-      {/* <div className="upload">
-        <form action="">
-            <p>Drag and drop your files here! or</p>
-            <input type="file" /><br />
-            <span>Accepted formats: .zip, .html, .js, .py, .txt</span>
-        </form>
-      </div> */}
 
       {/* <div className="nav">
         <select name="" id="">
@@ -141,3 +133,29 @@ function SubmitLab() {
 }
 
 export default SubmitLab
+
+
+const SubmitLabModal = ({showModal ,setShowModal}) =>{
+  return(
+    <>
+      <Modal open={showModal} onClose={()=>setShowModal(false)} >
+        <h2>Submit lab</h2>
+        <p>
+          {/* <h3>Submit Your Work</h3> */}
+          <div className="submit-option">
+            <button className={`button ${location.pathname === "" ? "active" : ""}`}>Upload File</button>
+            <button className={`button ${location.pathname === "" ? "active" : ""}`}>Submit Link</button>
+          </div>
+
+          <div className="upload">
+            <form action="">
+                <p>Drag and drop your files here! or</p>
+                <input type="file" /><br />
+                <span>Accepted formats: .zip, .html, .js, .py, .txt</span>
+            </form>
+          </div>
+        </p>
+      </Modal>
+    </>
+  )
+}
