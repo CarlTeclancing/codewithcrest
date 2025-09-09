@@ -2,7 +2,6 @@ import React ,{useState ,useEffect} from 'react'
 import './submitlab.css'
 import { Link, useNavigate } from 'react-router-dom'
 import LabInfo from '../../components/LabInfo.jsx'
-// import Lab from '../../components/Lab.jsx'
 import { HOST_NAME } from '../../../globals.js'
 import {Modal} from 'react-responsive-modal'
 import moduleIcon from '../../assets/module-icon.png'
@@ -142,13 +141,89 @@ export default SubmitLab
 
 
 const SubmitLabModal = ({showModal ,setShowModal}) =>{
+
+  function handleChange(e){
+    setInfo({...info ,[e.target.name]:e.target.value})
+  }
+
   return(
     <>
       <Modal open={showModal} onClose={()=>setShowModal(false)} >
-        <h2>Submit lab</h2>
         <p>
-          {/* <h3>Submit Your Work</h3> */}
-          <div className="submit-option">
+          <h3 style={{textAlign:'center'}}>Submit Lab/Challenge</h3>
+
+          <form onSubmit="">
+            <div className="form-group">
+              <div>
+                <label htmlFor="">Title</label>
+                <input
+                  type="text"
+                  name=''
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="">Technologies Used</label>
+                <input
+                  type="text"
+                  name='technologiesUsed'
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <div>
+                <label htmlFor="">Live Preview URL</label>
+                <input
+                  type="url"
+                  name='liveURL'
+                  placeholder='https://your-project.netlify.app'
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="">GitHub Repository URL</label>
+                <input
+                  type="url"
+                  name='githubURL'
+                  placeholder='https://github.com/username/repository'
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <div>
+                <label htmlFor="">Lab Description</label>
+                <textarea name="decription" id="decription" onChange={handleChange}></textarea>
+              </div>
+              <div>
+                <label htmlFor="">Comments or Notes</label>
+                <textarea name="comments" id="comments" onChange={handleChange}></textarea>
+              </div>
+            </div>
+
+            <div style={{display:'flex', alignItems:'center'}}>
+              <input style={{width:'auto'}} type="checkbox" /><label htmlFor="">Notify me when reviewed</label>
+            </div>
+            <br />
+            <label>Challenge/Lab</label><br />
+            <select style={{width:'94%', backgroundColor:'#bcbcbcff'}} name="" id="">
+              <option value="">Select a Challenge</option>
+            </select>
+              <br /> <br />
+
+            <div style={{display:'flex', justifyContent:'space-between'}}>
+              <div style={{display:'flex', alignItems:'center'}}>
+                <button>Clear Form</button>
+                <button>Save as draft</button>
+              </div>
+              <button className='button'>Submit</button>
+            </div>
+          </form>
+
+          {/* <div className="submit-option">
             <button className={`button ${location.pathname === "" ? "active" : ""}`}>Upload File</button>
             <button className={`button ${location.pathname === "" ? "active" : ""}`}>Submit Link</button>
           </div>
@@ -159,7 +234,7 @@ const SubmitLabModal = ({showModal ,setShowModal}) =>{
                 <input type="file" /><br />
                 <span>Accepted formats: .zip, .html, .js, .py, .txt</span>
             </form>
-          </div>
+          </div> */}
         </p>
       </Modal>
     </>

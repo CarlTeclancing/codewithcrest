@@ -67,6 +67,18 @@
     color: grey;
     font-size: smaller;
 }
+.form-group{
+  display: flex;
+  align-items:center;
+  margin-bottom: 15px;
+}
+.form-group > div {
+  flex: 1; /* Makes both fields take equal space */
+  margin-right: 10px;
+}
+.form-group > div:last-child {
+  margin-right: 0; /* Remove margin from the last child */
+}
 button{
     color: black;
     padding: 5px 8px;
