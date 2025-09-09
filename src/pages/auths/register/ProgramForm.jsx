@@ -66,18 +66,18 @@ function Program() {
         <h4>Duration <span style={{color:'crimson'}} >*</span></h4>
 
         <div className="query">
-            <div className="query1">
+            <label className="query1" htmlFor='1m'>
                 <input type="radio" id='1m' className="radio" name="Enquiry" onClick={()=>setInfo({...info ,duration:1})} />
                 <label htmlFor="1m">1 month</label>
-            </div>
-            <div className="query1">
+            </label>
+            <label className="query1" htmlFor='2m'>
                 <input type="radio" id='2m' className="radio" name="Enquiry" onClick={()=>setInfo({...info ,duration:2})}/>
                 <label htmlFor="2m">2 months</label>
-            </div>
-            <div className="query1">
+            </label>
+            <label className="query1" htmlFor='3m'>
                 <input type="radio" id='3m' className="radio" name="Enquiry" onClick={()=>setInfo({...info ,duration:3})}/>
                 <label htmlFor="3m">3 months</label>
-            </div>
+            </label>
        </div><br/>
 
         <div className="buttons">

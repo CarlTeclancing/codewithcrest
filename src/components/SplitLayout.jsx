@@ -36,7 +36,7 @@ export const SplitNav = () =>{
         </div>
         <div className={location.pathname == '/program' ? 'step active':"step"}>
             <p className='span'>3</p>
-            <p>Program  & Duration</p>
+            <p>Program </p>
         </div>
         <div className={location.pathname == '/experience' ? 'step active':"step"}>
             <p className='span'>4</p>

@@ -67,11 +67,12 @@
 .flex{
   display: flex;
   align-items: center;
+  gap:10px;
 }
 .step{
   display: flex;
   align-items: center;
-  
+  gap: 3px;
 }
 .step.active .span {
   background-color: #FFBC10 !important; 
@@ -80,7 +81,7 @@
   color: #FFBC10;
 }
 .step p{
-  font-size: 10px;
+  font-size: xx-small;
 }
 .span{
   color: white !important;
@@ -210,6 +211,8 @@
   .split-screen{
     width: 90%;
     margin-top: 10px;
+    box-shadow: none;
+    height: 100%;
   }
   .split-right{
     display: none;
