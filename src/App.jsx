@@ -16,6 +16,7 @@ import Experience from './pages/auths/register/ExperienceForm.jsx'
 import Program from './pages/auths/register/ProgramForm.jsx'
 import { UserProvider } from './providers/userProvider.jsx'
 import DashboardLayout from './Layout/DashboardLayout.jsx'
+import Subscribe from './pages/subscribe/Subscribe.jsx'
 
 function App() {
 
@@ -28,6 +29,12 @@ function App() {
     {path:'/personal-information', element:<PersonalInfo />},
     {path:'/program', element:<Program />},
     {path:'/experience', element:<Experience/>},
+
+    // Subscribtion page
+    {
+      path:'/subscribe',
+      element:<Subscribe/>
+    },
 
     // Dashboard pages
     {
