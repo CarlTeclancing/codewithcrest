@@ -25,7 +25,7 @@ export const SplitNav = () =>{
   const location = useLocation()
 
   return(
-    <div className="flex">
+    <div className="flex" style={{justifyContent:'space-evenly'}}>
         <div className={location.pathname == '/register' ? 'step active':"step"}>
             <p className='span'>1</p>
             <p>Account set up</p>
@@ -34,12 +34,12 @@ export const SplitNav = () =>{
             <p className='span'>2</p>
             <p>Personal information</p>
         </div>
-        <div className={location.pathname == '/program' ? 'step active':"step"}>
+        {/* <div className={location.pathname == '/program' ? 'step active':"step"}>
             <p className='span'>3</p>
             <p>Program </p>
-        </div>
+        </div> */}
         <div className={location.pathname == '/experience' ? 'step active':"step"}>
-            <p className='span'>4</p>
+            <p className='span'>3</p>
             <p>Experience </p>
         </div>
     </div>

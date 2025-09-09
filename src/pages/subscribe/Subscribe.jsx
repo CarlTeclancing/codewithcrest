@@ -13,7 +13,7 @@ const currencies = [
         amt:'15,000'
     },
     {
-        name:'kes',
+        name:'KES',
         amt:'1,300'
     },
     {
@@ -99,7 +99,7 @@ const Subscribe = () => {
                 <div className="currency-container">
                     <span className="currency-block">Currency: USD $10</span>
                     {currencies.map(currency => <span className={activeCurrency.name == currency.name ? 'currency-block active-currency':"currency-block"} key={currency.name}>{currency.name} {currency.amt}</span>)}
-                    <span> You will be charged: {activeCurrency.amt}{activeCurrency.name} </span>
+                    {/* <span style={{fontSize:'small'}}> You will be charged: {activeCurrency.amt}{activeCurrency.name} </span> */}
                 </div><br/>
                 <div className="subs-adv-container">
                     <div className="subs-adv">

@@ -16,7 +16,7 @@ function PersonalInfo() {
     async function nextPage(e){
         e.preventDefault()
         await localStorage.setItem('personal',JSON.stringify(info))
-        navigate('/program')
+        navigate('/experience')
     }
 
     function handleChange(e){
