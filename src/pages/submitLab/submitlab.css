@@ -140,3 +140,9 @@ td{
     font-weight: lighter;
     text-decoration: none;
 }
+
+@media only screen and (max-width:500px) {
+    .task{
+        display: none;
+    }
+}
