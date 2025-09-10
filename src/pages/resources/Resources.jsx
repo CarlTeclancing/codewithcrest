@@ -1,6 +1,7 @@
-import React from 'react'
+import React ,{useEffect ,useState} from 'react'
 import './resource.css'
 import Resource from '../../components/Resource'
+import { HOST_NAME } from '../../../globals';
 
 const resources = [
   { name: 'Vs Code Guide', type:'PDF', pic: '../../assets/img1.jpg', date:'2024-01-15', hashtags:['#Frontend' ,'  #Beginner' ,'  #Essentials'] },
@@ -11,6 +12,36 @@ const resources = [
   
 ];
 function Resources() {
+
+  const [resources ,setResources] = useState()
+  const [error, setError] = useState('')
+  const [loading ,setLoading] = useState(false)
+
+  async function getResources(){
+    setLoading(true)
+    try{
+      setLoading(true)
+      const response = await fetch(`${HOST_NAME}/api/resources`)
+      const data = await response.json()
+      if(response.ok){
+        setResources(data)
+      }
+      else{
+        setError(data.error)
+      }
+    }
+    catch(e){
+      console.log(e.message);
+        setError('Verify your connection')
+    }finally{
+      setLoading(false)
+    }
+  }
+
+  useEffect(()=>{
+    getResources()
+  },[0])
+
   return (
     <div className='dashboard-container'>
         <div className='headline'>
@@ -30,26 +61,25 @@ function Resources() {
                 </div> */}
             </div>
 
-            
+            { (!resources || resources.length == 0) && <center style={{fontSize:'x-large' ,color:'grey'}}>No Item Found</center>}
             <div className="resource-block">
               <div className="left-block">
-                {resources.map((resource, index) => (
+                {resources && resources.map((resource, index) => (
                   <Resource
                     key={index}
-                    name={resource.name}
+                    name={resource.title}
                     type={resource.type}
                     Pic={resource.pic}
                     date={resource.date}
-                    hashtags={resource.hashtags}
+                    hashtags={resource.hashtags.split('#')}
                   />
                  ))}
               </div>
 
-              <div className="right-block">
+              {/* <div className="right-block">
                  <div className='right-bar'>
                    <div className="headline">
                       <h3>Become a Top Coder</h3>
-                      {/* <span className='bln'>Top Coder</span> */}
                    </div>
 
                   <div >
@@ -81,7 +111,7 @@ function Resources() {
                           <p>Commit your code frequently with meaningful messages.</p>
                       </div>
                  </div>
-              </div>
+              </div> */}
             </div>
         </div>
     </div>

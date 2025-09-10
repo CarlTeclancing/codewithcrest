@@ -13,7 +13,7 @@ function Resource({name,type,pic,hashtags,date}) {
 
         <div style={{display:'flex' ,gap:10 ,padding:'10px 0px'}}>
           {hashtags.map((hashtag ,idx) => (
-            <span className='hashtag' key={idx}>{hashtag}</span>
+            <span className='hashtag' key={idx}>#{hashtag}</span>
           ))}
 
         </div>

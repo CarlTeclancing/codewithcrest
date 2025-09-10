@@ -16,9 +16,9 @@ function Register() {
     })
     
     async function register(e){
-                navigate("/personal-information")
-return
         e.preventDefault()
+        navigate("/personal-information")
+return
             setLoading(true)
             setError('')
         try{

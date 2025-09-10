@@ -1,21 +1,21 @@
 import React from 'react'
 
-function LabInfo({ title, hashtags, task, deadline, point, active, onClick }) {
+function LabInfo({ id, title, hashtags, task, deadline, point, active, onClick, open }) {
   return (
-    <div className='lab-info'>
+    <div className={open ? 'lab-info-close':'lab-info'}>
         <div className="headline">
-            <h3>{title}</h3>
-            <div  style={{display:'flex' ,gap:'10px'}}>
+            <span className='lab-title'>{title}</span>
+            {/* <div  style={{display:'flex' ,gap:'10px'}}>
                 {hashtags.map((hashtag ,idx) => (
                     <span className="hashtags" key={idx}>{hashtag}</span>
                 ))}
-            </div>
+            </div> */}
         </div>
 
         <p className='task'>{task}</p>
 
         <div className="bottom-line">
-            <div style={{display:'flex' ,alignItems:'center' ,gap:5}}>
+            {/* <div style={{display:'flex' ,alignItems:'center' ,gap:5}}>
                 <div className="deadline">
                     <i class="bi bi-calendar-check"></i>{' '}
                     <span>{deadline}</span>
@@ -24,9 +24,9 @@ function LabInfo({ title, hashtags, task, deadline, point, active, onClick }) {
                     <i class="bi bi-star-fill"></i>
                     <span>{point}</span>
                 </div>
-            </div>
+            </div> */}
             <div>
-                <button onClick={()=>onClick(active)} className={active?'':'inactive-btn'}>{active ? 'Submit lab':'Start lab'}</button>
+                <button onClick={()=>onClick(id)} className={active?'':'inactive-btn'}>{active ? 'Submit lab':'Start lab'}</button>
             </div>
         </div>
     </div>
