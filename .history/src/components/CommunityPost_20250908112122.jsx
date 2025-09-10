@@ -15,9 +15,9 @@ function CommunityPost({name, time, pic, code, title, description, hashtags}) {
         <p style={{color:'grey'}} >{description}</p>
         <p>{code}</p>
         <span className='hashtag'>{hashtags}</span>
-        <div className="icons">
-          
-        </div>
+        {/* <div className="icons">
+
+        </div> */}
     </div>
   )
 }

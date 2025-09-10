@@ -80,6 +80,18 @@ function SubmitLab() {
         </div>
       </div>
 
+     </td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>JavaScript Loops Assignment</td>
+            <td className='url'>https://www.producthunt.com</td>
+            <td>832</td>
+            <td>Jan 1, 2020</td>
+            <td>Delivered</td>
+        </tr>
+        </tbody>
+      </table>
 
     </div>
   )

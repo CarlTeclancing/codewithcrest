@@ -68,7 +68,7 @@ function Community() {
       </div>
         <div className="community-page">
             <div className="left-side">
-              {posts.map((post, index) => (
+                {posts.map((post, index) => (
                 <CommunityPost
                     key={index}
                     name={post.name}
@@ -79,7 +79,19 @@ function Community() {
                     code={post.code}
                     hashtags={post.hashtags}                  
                 />
-              ))}
+                ))}
+                {posts.map((post, index) => (
+                <CommunityPost
+                    key={index}
+                    name={post.name}
+                    Pic={post.pic}
+                    time={post.time}
+                    title={post.title}
+                    description={post.description}
+                    code={post.code}
+                    hashtags={post.hashtags}                  
+                />
+                ))}
             </div>
 
             <div className="right-side">

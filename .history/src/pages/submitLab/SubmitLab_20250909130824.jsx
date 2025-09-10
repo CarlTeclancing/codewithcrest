@@ -7,6 +7,7 @@ import {Modal} from 'react-responsive-modal'
 
 const lab = [
   { title: 'JavaScript Loops Lab', hashtags:['#Javascript', '#Loops' ,'#Beginner'], task:'Create interactive loops using for while, and for Each methods. Implement counter functionality and array manipulation techniques.' , deadline: 'Due in 2 days', point: '50pts' },
+    { title: 'JavaScript Loops Lab', hashtags:['#Javascript', '#Loops' ,'#Beginner'], task:'Create interactive loops using for while, and for Each methods. Implement counter functionality and array manipulation techniques.' , deadline: 'Due in 2 days', point: '50pts' },
 ];
 
 function SubmitLab() {
@@ -80,6 +81,53 @@ function SubmitLab() {
         </div>
       </div>
 
+      <table>
+
+      </table>
+
+
+      {/* <div className="nav">
+        <select name="" id="">
+            <option value="">Show All</option>
+        </select>
+        <div className="bar">
+            <Link>Properties</Link>
+            <Link>Filter</Link>
+            <Link>Sort</Link>
+            <Link>Clear All</Link>
+        </div>
+      </div> */}
+
+      {/* <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Lab Title</th>
+            <th>URL</th>
+            <th>Points</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>01</td>
+            <td>JavaScript Loops Assignment</td>
+            <td className='url'>https://www.producthunt.com</td>
+            <td>832</td>
+            <td>Jan 1, 2020</td>
+            <td>Delivered</td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>JavaScript Loops Assignment</td>
+            <td className='url'>https://www.producthunt.com</td>
+            <td>832</td>
+            <td>Jan 1, 2020</td>
+            <td>Delivered</td>
+        </tr>
+        </tbody>
+      </table> */}
 
     </div>
   )
@@ -157,15 +205,16 @@ const SubmitLabModal = ({showModal ,setShowModal}) =>{
             </div>
             <br />
             <label>Challenge/Lab</label><br />
-            <select style={{width:'95%', backgroundColor:'#bcbcbcff'}} name="" id="">
+            <select style={{width:'94%', backgroundColor:'#bcbcbcff'}} name="" id="">
               <option value="">Select a Challenge</option>
             </select>
               <br /> <br />
 
             <div style={{display:'flex', justifyContent:'space-between'}}>
               <div style={{display:'flex', alignItems:'center'}}>
-                <button className='btnl'>Clear Form</button>
-                <button className='btnl'>Save as draft</button>
+                <button
+                >Clear Form</button>
+                <button>Save as draft</button>
               </div>
               <button className='button'>Submit</button>
             </div>

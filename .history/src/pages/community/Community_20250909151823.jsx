@@ -79,7 +79,7 @@ function Community() {
                     code={post.code}
                     hashtags={post.hashtags}                  
                 />
-              ))}
+                ))}
             </div>
 
             <div className="right-side">

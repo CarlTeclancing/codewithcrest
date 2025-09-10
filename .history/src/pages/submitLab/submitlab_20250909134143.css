@@ -117,13 +117,10 @@ td{
     align-items: center;
     justify-content: space-between;
 }
-label, input::placeholder{
-    font-size: 13px;
-}
 .btnl{
     color: #006EFF;
     background-color: white;
-    border: 1px solid #006EFF;
+    border: 1px dashed black;
 }
 .bar a{
     color: black;

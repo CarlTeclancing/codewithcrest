@@ -80,6 +80,53 @@ function SubmitLab() {
         </div>
       </div>
 
+      <table>
+
+      </table>
+
+
+      {/* <div className="nav">
+        <select name="" id="">
+            <option value="">Show All</option>
+        </select>
+        <div className="bar">
+            <Link>Properties</Link>
+            <Link>Filter</Link>
+            <Link>Sort</Link>
+            <Link>Clear All</Link>
+        </div>
+      </div> */}
+
+      {/* <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Lab Title</th>
+            <th>URL</th>
+            <th>Points</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>01</td>
+            <td>JavaScript Loops Assignment</td>
+            <td className='url'>https://www.producthunt.com</td>
+            <td>832</td>
+            <td>Jan 1, 2020</td>
+            <td>Delivered</td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>JavaScript Loops Assignment</td>
+            <td className='url'>https://www.producthunt.com</td>
+            <td>832</td>
+            <td>Jan 1, 2020</td>
+            <td>Delivered</td>
+        </tr>
+        </tbody>
+      </table> */}
 
     </div>
   )

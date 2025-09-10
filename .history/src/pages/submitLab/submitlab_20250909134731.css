@@ -117,8 +117,8 @@ td{
     align-items: center;
     justify-content: space-between;
 }
-label, input::placeholder{
-    font-size: 13px;
+label{
+    font-size: 1;
 }
 .btnl{
     color: #006EFF;

@@ -115,16 +115,8 @@ td{
     width: 95%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-label, input::placeholder{
-    font-size: 13px;
-}
-.btnl{
-    color: #006EFF;
-    background-color: white;
-    border: 1px solid #006EFF;
-}
+    j
+    .btnl
 .bar a{
     color: black;
     font-weight: 12px;

@@ -8,7 +8,6 @@ import {Modal} from 'react-responsive-modal'
 
 const posts = [
   { name: 'De Duke Eric', pic: '../../assets/img1.jpg', time:'2 hours ago', title:'Weather App with API Integration', description:'Built a responsive weather app using vanilla JavaScript and OpenWeather API. Features include location detection and 5-day forecast.', hashtags:'#JavaScript #API #WebDev' },
-  { name: 'De Duke Eric', pic: '../../assets/img1.jpg', time:'2 hours ago', title:'Weather App with API Integration', description:'Built a responsive weather app using vanilla JavaScript and OpenWeather API. Features include location detection and 5-day forecast.', hashtags:'#JavaScript #API #WebDev' },
   
 ];
 
@@ -68,7 +67,9 @@ function Community() {
       </div>
         <div className="community-page">
             <div className="left-side">
-              {posts.map((post, index) => (
+                
+
+                {posts.map((post, index) => (
                 <CommunityPost
                     key={index}
                     name={post.name}
@@ -79,7 +80,7 @@ function Community() {
                     code={post.code}
                     hashtags={post.hashtags}                  
                 />
-              ))}
+                ))}
             </div>
 
             <div className="right-side">

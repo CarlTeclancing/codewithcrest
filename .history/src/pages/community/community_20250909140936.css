@@ -111,8 +111,6 @@ input, textarea{
 }
 .form-post{
     padding: 0px 20px;
-    border-radius: 3px;
-    margin-bottom: 10px;
     border: 1px solid #959595;
 }
 .post-profile img{
