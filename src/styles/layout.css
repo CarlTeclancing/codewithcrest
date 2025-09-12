@@ -48,11 +48,11 @@
 
 .head{
   padding: 10px;
-  height:59px;
   /* width: 98%; */
   display: flex;
   align-items: center;
-  justify-content: space-between !important;
+  justify-content: right;
+  /* justify-content: space-between !important; */
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -71,11 +71,14 @@
 .profile{
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 .profile img{
-  width: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  margin-left: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* margin-left: 10px; */
 }
 
 .dashboard-container{
@@ -87,4 +90,36 @@
   flex-direction: column;
   gap: 20px;
 }
+.mobile-menu{
+  display: none;
+}
 
+
+@media only screen and (max-width:500px) {
+  .head{
+    padding: 10px;
+    /* width: 98%; */
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between !important; */
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    justify-content: space-between;
+  }
+
+  .mobile-menu{
+    cursor: pointer;
+    border:solid 1px rgba(0, 0, 0, 0.1);
+    padding:10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+  }
+
+
+
+}

@@ -8,7 +8,7 @@ const GuideLines = () => {
             <div className="guide">
                 <h3>💡 Tips for Success</h3>
                 {/* <ul> */}
-                    <span>• Include screenshots and proper file names</span>
+                    {/* <span>• Include screenshots and proper file names</span> */}
                     <span>• Test your code before submission</span>
                     <span>• Add comments explaining your approach</span>
                     <span>• Follow the lab requirements checklist</span>
@@ -23,12 +23,12 @@ const GuideLines = () => {
                     <span>• Poor code organization or naming</span>
                 {/* </ul> */}
             </div>
-            <div className="guide">
+            {/* <div className="guide">
                 <h3>💡 Tips for Success</h3>
                 <span>Get support from our community and instructors</span>
                 <span>Join our WhatsApp community for real-time help</span>
                 <button className="">Contact Admn</button>
-            </div>
+            </div> */}
 
         </div>
       </div>

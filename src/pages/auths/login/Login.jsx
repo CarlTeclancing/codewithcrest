@@ -30,7 +30,7 @@ function Login() {
       const data = await response.json()
       console.log(data);
       if(response.ok){
-        let obj = {token:data.token, email:data.userData.email ,id:data.userData.id ,modules:data.modules || [] ,labs:data.labs || []}
+        let obj = {token:data.token, email:data.userData.email, profile:data.profile || {} ,id:data.userData.id ,modules:data.modules || [] ,labs:data.labs || []}
         await localStorage.setItem('user' ,JSON.stringify(obj))
         setUser(obj)
         navigate("/dashboard")
