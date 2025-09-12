@@ -25,7 +25,7 @@ function LabInfo({ lab , userLabs, confirmModal, submitLab}) {
   return (
     <div className={'lab-info'}>
         <div className="headline">
-            <span className='lab-title'>{lab.title}</span>
+            <span className='lab-title'>{lab.title ||''}</span>
             {/* <div  style={{display:'flex' ,gap:'10px'}}>
                 {hashtags.map((hashtag ,idx) => (
                     <span className="hashtags" key={idx}>{hashtag}</span>

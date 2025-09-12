@@ -26,7 +26,7 @@ function Sidebar() {
       }
    },[0])
 
-  return (
+   return (
     <div className='sidebar-admin'>
          <h2 className="logo p-10"><span>CODE</span>with<span>CREST</span></h2>
          <div className="navbar p-10">
@@ -55,10 +55,14 @@ function Sidebar() {
                   <i class="bi bi-file-earmark-text-fill"></i>
                   <span className='nav-element'>Resources</span>
                </Link>
-               {/* <Link className={`section ${location.pathname === "/dashboard/assistant" ? "active" : ""}`} to="/dashboard/assistant">
-                  <i class="bi bi-file-earmark-text-fill"></i>
-                  <span className='nav-element'>Assistant</span>
-               </Link> */}
+               <Link className={`section ${location.pathname === "/dashboard/golive" ? "active" : ""}`} to="/dashboard/golive">
+                  <i class="bi bi-broadcast"></i>
+                  <span className='nav-element'>Go Live</span>
+               </Link>
+               <Link className={`section ${location.pathname === "/dashboard/settings" ? "active" : ""}`} to="/dashboard/settings">
+                  <i class="bi bi-gear-fill"></i>
+                  <span className='nav-element'>Settings</span>
+               </Link>
          </div>
               
       </div>

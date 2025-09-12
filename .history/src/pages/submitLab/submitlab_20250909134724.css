@@ -1,0 +1,132 @@
+.labs-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+    gap: 15px;
+}
+.lab-info{
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    flex-direction: column;
+    border: 1px solid rgba(168, 122, 5 ,0.5);
+}
+.headline{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 0%;
+}
+.headline h3{
+    /* font-size: x-large; */
+    font-weight:800;
+}
+.bottom-line{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: small;
+}
+.points{
+    font-size: small;
+}
+.hashtags{
+    /* width: auto; */
+    border: solid 1px rgba(0,0,255 ,0.3);
+    padding: 10px;
+    font-size: x-small;
+    color: #006EFF;
+    border-radius: 6px;
+    background-color: #E3F2FD;
+}
+.inactive-btn{
+    color: #2563EB;
+    background-color: white;
+    border: solid 1px #2563EB;
+}
+.deadline{
+    color: #006EFF;
+    margin-right: 25px;
+}
+.task{
+    color: grey;
+}
+.form-group{
+  display: flex;
+  align-items:center;
+  margin-bottom: 15px;
+}
+.form-group > div {
+  flex: 1; /* Makes both fields take equal space */
+  margin-right: 10px;
+}
+.form-group > div:last-child {
+  margin-right: 0; /* Remove margin from the last child */
+}
+button{
+    color: black;
+    padding: 5px 8px;
+    margin-right: 20px;
+}
+button:hover, .button.active{
+  cursor: pointer;
+  border-radius: 2px;
+  color: white;
+  border: 1px solid #2563EB;
+  background-color: #2563EB;
+}
+.upload{
+    padding: 20px;
+    width: 60%;
+    height: 160px;
+    place-self: center;
+    display: flex;
+    margin: 25px 0;
+    border-radius: 5px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed black;
+}
+.upload input{
+    padding: 5px 8px;
+    place-self: center;
+}
+.upload span{
+ color: #959595;
+ font-size: 10px;
+}
+
+th{
+    color: #959595;
+    font-weight: lighter;
+    background-color: #E3F2FD;
+}
+td{
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+.url{
+    color: #006EFF;
+}
+.nav{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+label
+.btnl{
+    color: #006EFF;
+    background-color: white;
+    border: 1px solid #006EFF;
+}
+.bar a{
+    color: black;
+    font-weight: 12px;
+    margin-left: 25px;
+    font-weight: lighter;
+    text-decoration: none;
+}

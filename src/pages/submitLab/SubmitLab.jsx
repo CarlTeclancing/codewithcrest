@@ -9,7 +9,6 @@ import UserContext from '../../providers/userProvider.jsx'
 
 const lab = [
   { title: 'JavaScript Loops Lab', hashtags:['#Javascript', '#Loops' ,'#Beginner'], task:'Create interactive loops using for while, and for Each methods. Implement counter functionality and array manipulation techniques.' , deadline: 'Due in 2 days', point: '50pts' },
-    { title: 'JavaScript Loops Lab', hashtags:['#Javascript', '#Loops' ,'#Beginner'], task:'Create interactive loops using for while, and for Each methods. Implement counter functionality and array manipulation techniques.' , deadline: 'Due in 2 days', point: '50pts' },
 ];
 
 function SubmitLab() {
@@ -30,7 +29,7 @@ function SubmitLab() {
       setError('')
       const response = await fetch(`${HOST_NAME}/api/modules/with-labs`)
       const data = await response.json()
-      // console.log(data);
+      console.log(data);
       
       if(response.ok){
         setModules(data)
@@ -135,7 +134,7 @@ function SubmitLab() {
     }
   }
 
-// console.log(user.labs);
+console.log(modules);
 
 
   return (
@@ -169,7 +168,9 @@ function SubmitLab() {
 
 
                 <div className='labs-container'>
-                  {mod.labs.length != 0 && mod.labs.map((lab, index) => (
+                  {mod.labs.length != 0 && mod.labs.map((lab, index) => {
+                      if(!lab){ return; }
+                    return (
                     <LabInfo
                       key={index}
                       lab={lab}
@@ -178,13 +179,49 @@ function SubmitLab() {
                       userLabs={user.labs}
                       // onClick={setConfirmModal}
                     />
-                  ))}
+                  )}
+                  )}
                 </div>
 
               </div>
           )
         })
       }
+
+      {/* <div style={{lineHeight:'100%'}}>
+        <h3>Active lab</h3>
+        <div className='labs-container'>
+          {lab.slice(0 ,1).map((lab, index) => (
+            <LabInfo
+              key={index}
+              title={lab.title}
+              hashtags={lab.hashtags}
+              task={lab.task}
+              deadline={lab.deadline}
+              point={lab.point}
+              active={true}
+              onClick={()=>setShowModal(true)}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div style={{lineHeight:'100%'}}>
+        <h3>Available labs</h3>
+        <div className='labs-container'>
+          {lab.map((lab, index) => (
+            <LabInfo
+              key={index}
+              title={lab.title}
+              hashtags={lab.hashtags}
+              task={lab.task}
+              deadline={lab.deadline}
+              point={lab.point}
+            />
+          ))}
+        </div>
+      </div> */}
+
 
     </div>
   )
@@ -318,8 +355,8 @@ const SubmitChallengeModal = ({showModal ,setShowModal}) =>{
 
             <div style={{display:'flex', justifyContent:'space-between'}}>
               <div style={{display:'flex', alignItems:'center'}}>
-                <button>Clear Form</button>
-                <button>Save as draft</button>
+                <button className='btnl'>Clear Form</button>
+                <button className='btnl'>Save as draft</button>
               </div>
               <button className='button'>Submit</button>
             </div>

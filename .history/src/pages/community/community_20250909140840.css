@@ -1,0 +1,130 @@
+.community-page{
+    display: flex;
+    gap: 20px;
+    /* padding-right: 20px; */
+}
+.form-post span{
+    margin-right: 10px;
+}
+.left-side{
+    /* width: 60%; */
+    flex: 1;
+    display: flex;
+    /* margin-right: 20px; */
+    flex-direction: column;
+}
+.right-side{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    gap: 15px;
+}
+.firstline{
+    display: flex;
+    align-items: center;
+}
+.contributor-info{
+    display: flex;
+    flex-direction: column;
+    /* border: solid 1px red; */
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+}
+.contributors img{
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  margin-right: 20px;
+}
+input{
+    height: 23px;
+}
+textarea{
+    height: 70px;
+}
+input, textarea{
+    width:90%;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid #959595;
+}
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.add a{
+    color: #959595;
+    margin-right: 15px;
+    text-decoration: none;
+}
+.bottom button{
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #9b83fc;
+    background-color: #9b83fc;
+}
+.trends{
+    display: flex;
+    justify-content: space-between;
+}
+.hashtag{
+    color: #9b83fc;
+}
+.top-contributors{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.contributors, .top-contributors{
+    margin: 0% !important;
+}
+.contributors{
+    display: flex;
+    align-items: center;
+}
+.contributor-point{
+    color: #959595;
+}
+.suggestion{
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #f3f2f2;
+}
+.level-name{
+    color: #16A34A;
+}
+.suggestion p, .level-point{
+    color: #959595;
+}
+.post-profile{
+    display: flex;
+    padding: 10px 0px;
+    align-items: center;
+    gap: 5px;
+}
+.form-post{
+    padding: 0px 20px;
+.post-profile img{
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 20px;
+}
+.post-profile .name{
+    font-weight: bold;
+}
+.post-profile .time{
+    font-size: small;
+    color: grey;
+}
+.post-profile-info{
+    display: flex;
+    flex-direction: column;
+}

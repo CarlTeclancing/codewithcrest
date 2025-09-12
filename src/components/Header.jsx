@@ -31,8 +31,8 @@ function Header() {
 
         <div className="profile" style={{cursor:'pointer'}}>
             <div style={{display:'flex', flexDirection:'column'}}>
-              <span className='name' >{user.profile && user.profile.name}</span>
-              <span className='points' style={{fontSize:'x-small'}}>{user.email}</span>
+              <span className='name' >{user && user.profile && user.profile.name || ''}</span>
+              <span className='points' style={{fontSize:'x-small'}}>{user && user.email || ''}</span>
             </div>
             <img src={''} alt="" />
         </div>
