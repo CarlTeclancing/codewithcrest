@@ -1,10 +1,10 @@
-import React ,{useState ,useEffect} from 'react'
-// import  './layout.css'
-import Img1 from '../assets/img1.jpg'
+import React ,{useState ,useEffect ,useContext} from 'react'
+import UserContext from '../providers/userProvider'
 
 
 function Header() {
 
+  const {user} = useContext(UserContext)
   const [showMenu ,setShowMenu] = useState(false)
 
   useEffect(()=>{
@@ -17,20 +17,24 @@ function Header() {
 
   return (
     <div className='head'>
-      {/* {showMenu && <div>
-          <span className='bi bi-menu'>🍺</span>        
-      </div>} */}
+      
+      <div className='mobile-menu'>
+        💻
+      </div>
 
       {/* <h2 className="logo"><span>CODE</span>with<span>CREST</span></h2> */}
-        <div>
+        {/* <div>
           <span style={{display:'flex', alignItems:'center'}}>
             <input type="text"  className='search' placeholder='🔍search...  '/>
           </span>
-        </div>
+        </div> */}
 
         <div className="profile" style={{cursor:'pointer'}}>
-            <p className='name'>De Duke Kenzo<br/><span className='points'>125 points</span></p>
-            <img src={Img1} alt="" />
+            <div style={{display:'flex', flexDirection:'column'}}>
+              <span className='name' >{user && user.profile && user.profile.name || ''}</span>
+              <span className='points' style={{fontSize:'x-small'}}>{user && user.email || ''}</span>
+            </div>
+            <img src={''} alt="" />
         </div>
     </div>
   )

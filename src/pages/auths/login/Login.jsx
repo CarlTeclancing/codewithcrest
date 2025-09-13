@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState ,useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import SplitLayout from '../../../components/SplitLayout'
 import { HOST_NAME } from '../../../../globals';
+import UserContext from '../../../providers/userProvider';
 
 
 function Login() {
 
   const navigate = useNavigate()
+  const {user ,setUser} = useContext(UserContext)
   const [email, setEmail]= useState("");
   const [password, setPassword]= useState("");
   const [loading ,setLoading] = useState(false)
@@ -27,9 +29,10 @@ function Login() {
       })
       const data = await response.json()
       console.log(data);
-      
       if(response.ok){
-        await localStorage.setItem('user' ,JSON.stringify(data.user))
+        let obj = {token:data.token, email:data.userData.email, profile:data.profile || {} ,id:data.userData.id ,modules:data.modules || [] ,labs:data.labs || []}
+        await localStorage.setItem('user' ,JSON.stringify(obj))
+        setUser(obj)
         navigate("/dashboard")
       }else{
         setError(data.error)
@@ -38,6 +41,7 @@ function Login() {
     catch (err) {
       // If backend returns error
       console.error(err.response?.data || err.message);
+      setError('Verify your connection')
       // alert(err.response?.data?.error || "Something went wrong");
     }
     finally{

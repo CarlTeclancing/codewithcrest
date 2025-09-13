@@ -1,10 +1,11 @@
-import React ,{useState ,useEffect} from 'react'
+import React ,{useState ,useEffect ,useContext} from 'react'
 import './submitlab.css'
 import { Link, useNavigate } from 'react-router-dom'
 import LabInfo from '../../components/LabInfo.jsx'
 import { HOST_NAME } from '../../../globals.js'
 import {Modal} from 'react-responsive-modal'
 import moduleIcon from '../../assets/module-icon.png'
+import UserContext from '../../providers/userProvider.jsx'
 
 const lab = [
   { title: 'JavaScript Loops Lab', hashtags:['#Javascript', '#Loops' ,'#Beginner'], task:'Create interactive loops using for while, and for Each methods. Implement counter functionality and array manipulation techniques.' , deadline: 'Due in 2 days', point: '50pts' },
@@ -13,11 +14,14 @@ const lab = [
 function SubmitLab() {
 
   const navigate = useNavigate()
+  const {user ,setUser} = useContext(UserContext)
   const [modules , setModules] = useState()
   const [loading ,setLoading] = useState(false)
   const [error ,setError] = useState('')
-  const [showModal ,setShowModal] = useState(false)
+  const [labModal ,setLabModal] = useState(false)
+  const [challengeModal ,setChallengeModal] = useState(false)
   const [confirmModal, setConfirmModal] = useState(false)
+
 
   async function getModules(){
     try{
@@ -25,7 +29,7 @@ function SubmitLab() {
       setError('')
       const response = await fetch(`${HOST_NAME}/api/modules/with-labs`)
       const data = await response.json()
-      // console.log(data);
+      console.log(data);
       
       if(response.ok){
         setModules(data)
@@ -46,35 +50,45 @@ function SubmitLab() {
     getModules()
   },[0])
 
-  async function startLab(labId){
-    console.log(labId);
-    const file = await fetch(`${HOST_NAME}/labs/ft/html_basics.txt`)
-    if(file.ok){
-      const blob = await file.blob()
-      const url = window.URL.createObjectURL(blob)
-      const link = document.createElement('a')
-      link.href = url
-      link.setAttribute('download', 'html_bascis.txt')
-      document.body.appendChild(link)
-      link.click()
-      link.parentNode.removeChild(link)
-      window.URL.revokeObjectURL(url)
-    }
-    // window.location.href = (`/${HOST_NAME}/labs/ft/html_basics.txt`)
-    return
+  async function startLab(lab){
+    // console.log(lab.id);
+    // return
     try{
-      const response = await fetch(`${HOST_NAME}/api/lab/start-lab`, {
+      const response = await fetch(`${HOST_NAME}/api/user-lab`, {
         method:'post',
         headers:{
           'content-type':'application/json'
         },
-        body:JSON.stringify({})
+        body:JSON.stringify({lab_id:lab.id, user_id:user.id})
       })
       const data = await response.json()
+      console.log(data);
+      
       if(response.ok){
+        const file = await fetch(`${HOST_NAME}/labs/${lab.module}/${lab.file}`)
 
+        // Saving the user's active labs 
+        let tmp = user
+        tmp.labs = tmp.labs ? [...user.labs, {id:lab.id, status:'started' }] : [{id:lab.id, status:'started'}]
+        await localStorage.setItem('user' ,JSON.stringify(tmp))
+        setUser(tmp)
+
+        // Downloading the lab file
+        if(file.ok){
+          const blob = await file.blob()
+          const url = window.URL.createObjectURL(blob)
+          const link = document.createElement('a')
+          link.href = url
+          link.setAttribute('download', lab.file)
+          document.body.appendChild(link)
+          link.click()
+          link.parentNode.removeChild(link)
+          window.URL.revokeObjectURL(url)
+        }
+
+        setConfirmModal(false)
       }else{
-
+        setError(data.error)
       }
     }
     catch(e){
@@ -82,22 +96,64 @@ function SubmitLab() {
     }
   }
 
+  async function submitLab(e, code){
+    e.preventDefault()
+    console.log(code);
+      // return
+    try{
+      const response = await fetch(`${HOST_NAME}/api/user-lab/${labModal.id}`, {
+        method:'put',
+        headers:{
+          'content-type':'application/json'
+        },
+        body:JSON.stringify({code:code})
+      })
+      const data = await response.json()
+      console.log(data);
+      
+      if(response.ok){
+        let tmp = user
+        let newLabs = tmp.labs.map(l => {
+          if(l.id == labModal.id){
+            l.status = 'completed'
+          }
+          return l
+        })
+        tmp.labs = newLabs
+        setUser(tmp)
+        await localStorage.setItem('user', JSON.stringify(tmp))
+      
+        setLabModal(false)
+      }else{
+        
+      }
+    }
+    catch(e){
+      console.log(e.message);
+      
+    }
+  }
+
+console.log(modules);
+
+
   return (
     <div className='dashboard-container'>
       
-      <SubmitLabModal showModal={showModal} setShowModal={setShowModal} />
+      <SubmitChallengeModal showModal={challengeModal} setShowModal={setChallengeModal} />
+      <SubmitLabModal showModal={labModal} setShowModal={setLabModal} submitLab={submitLab} />
       <ConfirmationModal showModal={confirmModal} setShowModal={setConfirmModal} startLab={startLab}/>
 
       {
         modules && modules.map((mod, idx) => {
           return(
-              <div key={idx} className={idx != 0? 'module-container module-lock':'module-container'} onClick={()=>{
-                if(idx != 0){
-                  navigate('/subscribe')
+              <div key={idx} className={!user.modules.includes(mod.code) ? 'module-container module-lock':'module-container'} onClick={()=>{
+                if(!user.modules.includes(mod.code)){
+                  navigate('/subscribe?code='+mod.code)
                 }
               }} >
                 <h3 
-                  style={{display:'flex' ,justifyContent:'space-between', alignItems:'center', cursor:idx!=0?'not-allowed':'pointer'}}
+                  style={{display:'flex' ,justifyContent:'space-between', alignItems:'center', cursor:!user.modules.includes(mod.code) ?'not-allowed':'pointer'}}
                   // onClick={()=>}
                 > 
                   <span style={{display:'flex' ,alignItems:'center' ,gap:10}}> 
@@ -106,25 +162,25 @@ function SubmitLab() {
                   
                   <span style={{border:'solid 0px red' ,marginRight:20 ,padding:'0px 10px'}}>
                      {/* <i className='bi bi-chevron-down'></i>  */}
-                     <i className={ idx != 0?'bi bi-lock':'bi bi-unlock'}></i> 
+                     <i className={ !user.modules.includes(mod.code) ?'bi bi-lock':'bi bi-unlock'}></i> 
                   </span> 
                 </h3>
 
 
                 <div className='labs-container'>
-                  {mod.labs.length != 0 && mod.labs.map((lab, index) => (
+                  {mod.labs.length != 0 && mod.labs.map((lab, index) => {
+                      if(!lab){ return; }
+                    return (
                     <LabInfo
-                      open={false}
                       key={index}
-                      id={lab.id}
-                      title={lab.title}
-                      onClick={setConfirmModal}
-                      // hashtags={lab.hashtags || []}
-                      task={lab.description || '---'}
-                      // deadline={lab.deadline || 'test'}
-                      // point={lab.point || 5}
+                      lab={lab}
+                      confirmModal={setConfirmModal}
+                      submitLab={setLabModal}
+                      userLabs={user.labs}
+                      // onClick={setConfirmModal}
                     />
-                  ))}
+                  )}
+                  )}
                 </div>
 
               </div>
@@ -132,7 +188,7 @@ function SubmitLab() {
         })
       }
 
-      <div style={{lineHeight:'100%'}}>
+      {/* <div style={{lineHeight:'100%'}}>
         <h3>Active lab</h3>
         <div className='labs-container'>
           {lab.slice(0 ,1).map((lab, index) => (
@@ -164,7 +220,7 @@ function SubmitLab() {
             />
           ))}
         </div>
-      </div>
+      </div> */}
 
 
     </div>
@@ -174,7 +230,56 @@ function SubmitLab() {
 export default SubmitLab
 
 
-const SubmitLabModal = ({showModal ,setShowModal}) =>{
+const SubmitLabModal = ({showModal ,setShowModal, submitLab}) =>{
+
+  const [code, setCode] = useState('')
+
+  return(
+    <>
+      <Modal open={showModal} onClose={()=>setShowModal(false)} showCloseIcon={false}>
+        <div style={{display:'flex', flexDirection:'column'}}>
+          <h3 style={{textAlign:'center'}}>Submit Lab</h3>
+
+          <form onSubmit={e=>submitLab(e, code)}>
+            <div className="form-group">
+              <div>
+                <label htmlFor="">Title</label>
+                <input
+                  type="text"
+                  name=''
+                  value={showModal.title}
+                  disabled
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <div>
+                <label htmlFor="">Lab Code</label>
+                <textarea 
+                  name="decription" 
+                  id="decription" 
+                  style={{minWidth:'400px'}} 
+                  onChange={e=>setCode(e.target.value)}
+                  placeholder='Copy and paste your code here !'
+                ></textarea>
+              </div>
+            </div>
+
+            <div style={{display:'flex', justifyContent:'space-between'}}>
+
+              <button className='button'>Submit</button>
+            </div>
+          </form>
+
+        </div>
+      </Modal>
+    </>
+  )
+}
+
+
+const SubmitChallengeModal = ({showModal ,setShowModal}) =>{
 
   function handleChange(e){
     setInfo({...info ,[e.target.name]:e.target.value})
@@ -182,9 +287,9 @@ const SubmitLabModal = ({showModal ,setShowModal}) =>{
 
   return(
     <>
-      <Modal open={showModal} onClose={()=>setShowModal(false)} >
+      <Modal open={showModal} onClose={()=>setShowModal(false)} showCloseIcon={false}>
         <p>
-          <h3 style={{textAlign:'center'}}>Submit Lab/Challenge</h3>
+          <h3 style={{textAlign:'center'}}>Submit Challenge</h3>
 
           <form onSubmit="">
             <div className="form-group">
@@ -242,8 +347,8 @@ const SubmitLabModal = ({showModal ,setShowModal}) =>{
               <input style={{width:'auto'}} type="checkbox" /><label htmlFor="">Notify me when reviewed</label>
             </div>
             <br />
-            <label>Challenge/Lab</label><br />
-            <select style={{width:'95%', backgroundColor:'#bcbcbcff'}} name="" id="">
+            <label>Challenge</label><br />
+            <select style={{width:'94%', backgroundColor:'#bcbcbcff'}} name="" id="">
               <option value="">Select a Challenge</option>
             </select>
               <br /> <br />

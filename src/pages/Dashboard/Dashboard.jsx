@@ -1,9 +1,11 @@
-import {useState ,useEffect} from 'react'
+import {useState ,useEffect ,useContext} from 'react'
 import './dashboard.css'
 import { HOST_NAME } from '../../../globals'
+import UserContext from '../../providers/userProvider'
 
 function Dashboard() {
 
+  const {user} = useContext(UserContext)
   const [summary ,setSummary] = useState()
   const [loading , setLoading] = useState(false)
   const [error ,setError] = useState('')
@@ -30,10 +32,12 @@ function Dashboard() {
     getSummary()
   },[0])
 
+  
+
   return (
     <div className='dashboard-container'>
       <div style={{lineHeight:'90%'}}>
-        <h1>Welcome <span>De Duke Kenzo</span> </h1>
+        <h1>Welcome <span style={{color:'darkblue'}}>{user.profile && user.profile.name}</span> </h1>
         <p>Here's an overview of your weekly activities</p>
       </div>
 

@@ -17,9 +17,9 @@ function Experience() {
 
     async function getAllData(){
         const personal = await JSON.parse(localStorage.getItem('personal')) 
-        const program = await JSON.parse(localStorage.getItem('program')) 
+        // const program = await JSON.parse(localStorage.getItem('program')) 
         const userId = await localStorage.getItem('user')
-        return {...personal ,...program ,userId:parseInt(userId)}
+        return {...personal ,userId:parseInt(userId)}
     }
 
     async function saveData(){
@@ -147,7 +147,7 @@ function Experience() {
             {error && error}
         </div>
         <div className="buttons">
-            <Link className='back' to='/program'>Back</Link>
+            <Link className='back' to='/personal-information'>Back</Link>
             <span className='next-step' style={{cursor:'pointer'}} onClick={loading ?'':()=>saveData()}>Finish</span>
         </div>
     </SplitLayout>

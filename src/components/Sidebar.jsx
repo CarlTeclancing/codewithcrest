@@ -1,11 +1,30 @@
-import React from 'react'
+import React ,{ useEffect,useContext} from 'react'
 import { Link  ,useLocation } from 'react-router-dom'
 import '../styles/sideBarStyles.css'
+import UserContext from '../providers/userProvider'
 
 
 function Sidebar() {
 
    const location = useLocation()   
+   const {user ,setUser} = useContext(UserContext)
+
+   async function getLocalUser(){
+      try{
+         const raw = await JSON.parse( localStorage.getItem('user') )
+         // console.log("from local storage in sidebar: ", raw);
+         setUser(raw)
+      }
+      catch(e){
+         console.log(e);
+      }
+   }
+
+   useEffect(()=>{
+      if(!user){
+         getLocalUser()
+      }
+   },[0])
 
    return (
     <div className='sidebar-admin'>
