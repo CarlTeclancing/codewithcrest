@@ -15,23 +15,21 @@ function Ranking() {
             <div className="box">
                 <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
                     <h4>Total Points This Week</h4>
-                    <i class="bi bi-trophy-fill" style={{color:'#daa500'}}></i>
+                    <i class="bi bi-trophy-fill" st></i>
                 </div>
                 <span className='total-points'>245</span>
                 <p className='p'>Current week total</p>
             </div>
             <div className="box">
-                <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+                <div>
                     <h4>Points Earned</h4>
-                    <i class="bi bi-arrow-up" style={{color:'#1ab051ff'}}></i>
                 </div>
                 <span className='points-earned'>+260</span>
                 <p className='p'>From completed tasks</p>
             </div>
             <div className="box">
-                <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+                <div>
                     <h4>Points Lost</h4>
-                    <i class="bi bi-arrow-down" style={{color:'#DC2626'}}></i>
                 </div>
                 <span className='points-lost'>-15</span>
                 <p className='p'>From late submissions</p>

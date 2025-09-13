@@ -31,7 +31,6 @@ function Ranking() {
             <div className="box">
                 <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
                     <h4>Points Lost</h4>
-                    <i class="bi bi-arrow-down" style={{color:'#DC2626'}}></i>
                 </div>
                 <span className='points-lost'>-15</span>
                 <p className='p'>From late submissions</p>
