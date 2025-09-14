@@ -1,0 +1,136 @@
+.subscribe-page{
+    /* border: solid 1px red; */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: fit-content;
+    max-width: 80%;
+    margin: auto;
+    align-items: center;
+    padding: 10px;
+}
+
+.subscribe-header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.subs-img img{
+    width: 450px;
+    /* border: solid 1px red; */
+}
+
+.currency-container{
+    border: solid 1px rgba(0,50,250 ,0.5);
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    padding: 5px 20px;
+    font-size: small;
+    width: fit-content;
+    margin: auto;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.currency-block{
+    border: solid 1px rgba(0,50,250 ,0.5);
+    border-radius: 15px;
+    padding:7px 10px;
+}   
+.active-currency{
+    color:white;
+    background-color:rgba(0,50,250 ,0.5) ;
+}
+
+.subs-adv-container, .payment-option-container, .payment-detail-container{
+    display: flex;
+    row-gap: 20px;
+    column-gap: 50px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* border: solid 1px red;; */
+}
+
+.subs-adv ,.payment-option {
+    min-width: 400px;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 10px;
+    border: solid 1px rgba(0,50,250 ,0.5);
+    background-color: rgba(0,50,250 ,0.1);
+}
+.subs-adv div{
+    display: flex;
+    flex-direction: column;
+}
+.subs-adv div span{
+    font-size: small;
+    color: grey;
+}
+
+.payment-option{
+    border: solid 1px rgba(0,0,0 ,0.5);
+    background-color: white;
+}
+
+.payment-detail-container div{
+    min-width: 400px;
+    /* padding: 15px 30px; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 10px;
+    color: grey;
+}
+
+@media only screen and (max-width:500px) {
+    .subscribe-page{
+
+        padding: 10px;
+        /* border: solid 1px red; */
+        max-width: 90%;
+    }
+
+    .subs-img{
+        display: none;
+    }
+
+    .currency-container{
+        width:300px;
+        font-size: x-small;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .subs-adv-container, .payment-option-container, .payment-detail-container{
+        
+        margin: auto;
+        /* border: solid 1px red; */
+        row-gap: 10px;
+        flex-direction: column;
+        max-width: fit-content;
+    }
+
+    .subs-adv ,.payment-option {
+        padding: 15px 10px;
+        gap: 15px;
+        min-width: 300px;
+        max-width: 100px;
+    }
+
+    .payment-option{
+        border: solid 1px rgba(0,0,0 ,0.5);
+        background-color: white;
+    }
+
+    .payment-detail-container div{
+        min-width: 300px;
+        max-width: 300px;
+
+    }
+
+}

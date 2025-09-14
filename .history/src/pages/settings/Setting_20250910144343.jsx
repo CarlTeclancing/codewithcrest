@@ -1,0 +1,33 @@
+import React, {useState ,useEffect} from 'react'
+import Img1 from ''
+function Setting() {
+  return (
+    <div>
+        <div style={{display:'flex', justifyContent:'space-between'}}>
+            <h2>Settings</h2>
+            <div style={{display:'flex', alignItems:'center'}}>
+                <button className='btnl'>
+                    <i class="bi bi-download" style={{marginRight:'10px'}}></i>
+                    Export
+                </button>
+                <button>
+                    <i class="bi bi-floppy" style={{marginRight:'10px'}} ></i>
+                    Save Changes
+                </button>
+            </div>
+        </div>
+        
+        <div className="lab-info">
+            <div className="post-profile">
+            <img src={} alt="" />
+            <div className="post-profile-info">
+                <span className="name">name</span>
+                <span className="time">time</span>
+            </div>
+        </div>
+        </div>
+    </div>
+  )
+}
+
+export default Setting
