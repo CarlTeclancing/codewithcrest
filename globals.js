@@ -1,3 +1,3 @@
-const HOST_NAME = 'http://localhost:5000'
+const HOST_NAME = 'https://codewithcrest-backend-git-main-carlteclancings-projects.vercel.app/'
 
 export {HOST_NAME}
